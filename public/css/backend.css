@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+* {
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+section {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.card-title {
+    margin-bottom: 0;
+    font-size: 16px;
+}
+
+.card-header, .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    border-bottom: transparent;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.imagePreview > img {
+    transition: all .2s ease;
+}
+
+.imagePreview:hover > img {
+    filter: brightness(80%);
+}
+
+.imagePreview:hover > div {
+    display: block !important;
+}
+
+input:not(:placeholder-shown),
+textarea:not(:placeholder-shown) {
+    border: none;
+    outline: none !important;
+}
+
+.stpfield {
+    position: relative;
+}
+
+.stpfield > input:focus ~ label,
+.stpfield > textarea:focus ~ label {
+    display: none !important;
+}
+
+.stpfield > input:not(:focus) ~ .saveButton,
+.stpfield > textarea:not(:focus) ~ .saveButton {
+    display: none !important;
+}
+
+.stpfield > input:placeholder-shown,
+.stpfield > textarea:placeholder-shown {
+    color: var(--bs-yellow) !important;
+}
+
+.stpfield > input,
+.stpfield > textarea {
+    background-color: transparent !important;
+    outline: none !important;
+    border: 0;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    color: inherit !important;
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+}
+
+.stpfield > input:focus,
+.stpfield > textarea:focus {
+    outline: none !important;
+}
+
+.stpfield > input::placeholder,
+.stpfield > textarea::placeholder {
+    opacity: .85;
+    color: inherit;
+}
+
+.fw-semibold {
+    font-weight: 500;
+}
