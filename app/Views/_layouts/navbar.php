@@ -1,9 +1,10 @@
-<div class="container-fluid position-fixed top-0 start-0 w-100 bg-light bg-dark text-white text-center py-auto d-flex align-items-center justify-content-center gap-1"
-     style="z-index: 1000 ;font-size: 12px; height: 1.5rem">
+<div class="container-fluid position-fixed top-0 start-0 w-100 text-white text-center py-auto d-flex align-items-center justify-content-center gap-1"
+     style="background-color: #00964c; z-index: 1000 ;font-size: 12px; height: 1.5rem">
     You are editing
     <form action="<?= route_to("session.lang") ?>?url=<?= current_url() ?>" method="post" id="langsel">
         <select name="lang" id="lang"
-                class="border-top-0 border-bottom-0 bg-dark text-white fw-semibold"
+                style="background-color: #00964c"
+                class="border-top-0 border-bottom-0 text-white fw-semibold"
                 onchange="document.getElementById('langsel').submit()">
             <option value="EN" <?= currLang() == "EN" ? 'selected' : '' ?>><?= labelLang("EN") ?> (EN)</option>
             <option value="ID" <?= currLang() == "ID" ? 'selected' : '' ?>><?= labelLang("ID") ?> (ID)</option>

@@ -62,7 +62,7 @@ textarea:not(:placeholder-shown) {
 
 .stpfield > input:placeholder-shown,
 .stpfield > textarea:placeholder-shown {
-    color: var(--bs-yellow) !important;
+    color: var(--bs-red) !important;
 }
 
 .stpfield > input,

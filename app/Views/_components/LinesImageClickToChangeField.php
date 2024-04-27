@@ -1,14 +1,16 @@
 <?php
 /**
  * @var String $field_id
- * @var String $field_group_name
+ * @var STPMedia $medias
  */
 
-$strings = model("STPStrings");
+use App\Models\STPMedia;
+
+$medias = model("STPMedia");
 ?>
 
 <div class="position-relative">
-    <img src="<?= $strings->getOrCreateByKey($field_id)->{currLang()} ?>" class="w-100 rounded" alt=""
+    <img src="<?= $medias->getOrPlaceholderByKey($field_id) ?>" class="w-100 rounded" alt=""
          style="aspect-ratio: 16 / 9; object-fit: cover;">
     <div class="position-absolute top-0 end-0 m-2">
         <?= summon_image_button($field_id) ?>
