@@ -80,7 +80,7 @@
                     <?= summon_editable("We __", "HOME_ABOUT_WE_${i}_content") ?>
 
                     <small>
-                        <?= summon_editable("Learn More Buttom", "HOME_ABOUT_WE_${i}_button") ?>
+                        <?= summon_editable("Learn More Button", "HOME_ABOUT_WE_${i}_button") ?>
                         <small class="d-block ms-4">
                             <?= summon_editable("Button's URL", "HOME_ABOUT_WE_${i}_button_url") ?>
                         </small>

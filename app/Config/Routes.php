@@ -40,7 +40,7 @@ $routes->group('dashboard', function ($routes) {
     $routes->get("", "Dashboard::index", ["as" => "dashboard.landing"]);
 
     $routes->get('landing', "Dashboard\Landing::index", ["as" => "dashboard.landing.index"]);
-    $routes->get('about-us', "Dashboard\About::index", ["as" => "dashboard.about-us.index"]);
+    $routes->get('about-us', "Dashboard\About::index", ["as" => "dashboard.about.index"]);
     $routes->get('what-we-do', "Dashboard\WhatWeDo::index", ["as" => "dashboard.what-we-do.index"]);
     $routes->get('partnerships', "Dashboard\Partnerships::index", ["as" => "dashboard.partnerships.index"]);
     $routes->get('sustainability', "Dashboard\Sustainability::index", ["as" => "dashboard.sustainability.index"]);
