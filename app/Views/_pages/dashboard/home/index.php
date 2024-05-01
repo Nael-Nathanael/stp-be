@@ -22,11 +22,11 @@
             <div class="bg-warning pt-1" style="max-width: 100px"></div>
 
             <div class="py-0 fw-semibold" style="font-size: 1.5rem">
-                <?= summon_editable("(Page Title)", "HOME_HERO_TITLE", true) ?>
+                <?= summon_editable_ckeditor("(Page Title)", "HOME_HERO_TITLE", true) ?>
             </div>
 
             <div class="lead py-0 fw-normal">
-                <?= summon_editable("(Page Subtitle)", "HOME_HERO_SUBTITLE", true) ?>
+                <?= summon_editable_ckeditor("(Page Subtitle)", "HOME_HERO_SUBTITLE", true) ?>
             </div>
 
             <div class="py-0 fw-normal">
@@ -54,11 +54,11 @@
                 <div class="bg-warning pt-1" style="max-width: 100px"></div>
 
                 <div class="h3 fw-semibold">
-                    <?= summon_editable("Home Header Title", "HOME_HEADER_TITLE", true) ?>
+                    <?= summon_editable_ckeditor("Home Header Title", "HOME_HEADER_TITLE") ?>
                 </div>
 
                 <div class="fw-semibold">
-                    <?= summon_editable("Home Header Content", "HOME_HEADER_CONTENT", true) ?>
+                    <?= summon_editable_ckeditor("Home Header Content", "HOME_HEADER_CONTENT") ?>
                 </div>
             </div>
             <div class="col-6">
@@ -77,7 +77,7 @@
                         <?= summon_editable("__ We __", "HOME_ABOUT_WE_${i}_title") ?>
                     </div>
 
-                    <?= summon_editable("We __", "HOME_ABOUT_WE_${i}_content") ?>
+                    <?= summon_editable_ckeditor("We __", "HOME_ABOUT_WE_${i}_content") ?>
 
                     <small>
                         <?= summon_editable("Learn More Button", "HOME_ABOUT_WE_${i}_button") ?>
@@ -110,7 +110,7 @@
                     </div>
 
                     <div class="fw-normal">
-                        <?= summon_editable("Sustainability Content", "HOME_SUST_CONTENT") ?>
+                        <?= summon_editable_ckeditor("Sustainability Content", "HOME_SUST_CONTENT") ?>
                     </div>
                 </div>
                 <div class="col-3">
@@ -138,10 +138,7 @@
 
             <div class="col-4">
                 <div class="fw-semibold small text-end">
-                    <?= summon_editable("Line 1", "HOME_SPL_INFO_LINE_1") ?>
-                </div>
-                <div class="fw-semibold small text-end">
-                    <?= summon_editable("Line 2", "HOME_SPL_INFO_LINE_2") ?>
+                    <?= summon_editable_ckeditor("Line 1", "HOME_SPL_INFO_LINE_1") ?>
                 </div>
             </div>
             <div class="col-12">

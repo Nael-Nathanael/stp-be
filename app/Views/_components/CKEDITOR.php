@@ -6,11 +6,17 @@
 ?>
 <?php $strings = model("STPStrings"); ?>
 <input type="hidden" name="<?= $field_id ?>" id="content_<?= $field_id ?>">
-<div class="mb-3">
-    <?= $field_label ?>
+<div>
+    <div style="font-size: 12px" class="d-flex gap-2">
+        <?= $field_label ?>
+        <?php if (isDev()): ?>
+            <code style="font-size: 12px"><?= $field_id ?></code>
+        <?php endif ?>
+    </div>
     <div class="document-editor__toolbar_<?= $field_id ?> border-0" id="toolbar_<?= $field_id ?>"></div>
-    <div class="pb-4">
-        <div id="editor<?= $field_id ?>" class="editor<?= $field_id ?> border shadow-none bg-white" style="min-height: 200px">
+    <div>
+        <div id="editor<?= $field_id ?>" class="editor<?= $field_id ?> border shadow-none"
+             style="min-height: 150px">
         </div>
     </div>
 </div>

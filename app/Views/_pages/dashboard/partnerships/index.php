@@ -30,11 +30,11 @@
                 <div class="bg-warning pt-1" style="max-width: 100px"></div>
 
                 <div class="h3 fw-semibold">
-                    <?= summon_editable("Partnerships Header Title", "PARTNERSHIPS_HEADER_TITLE") ?>
+                    <?= summon_editable("Partnerships Header Title", "PARTNERSHIPS_HEADER_TITLE", true) ?>
                 </div>
 
                 <div class="fw-semibold">
-                    <?= summon_editable("Partnerships Header Content", "PARTNERSHIPS_HEADER_CONTENT") ?>
+                    <?= summon_editable("Partnerships Header Content", "PARTNERSHIPS_HEADER_CONTENT", true) ?>
                 </div>
             </div>
         </div>

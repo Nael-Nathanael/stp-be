@@ -30,11 +30,11 @@
                 <div class="bg-warning pt-1" style="max-width: 100px"></div>
 
                 <div class="h3 fw-semibold">
-                    <?= summon_editable("What We Do Header Title", "WWD_HEADER_TITLE") ?>
+                    <?= summon_editable_ckeditor("What We Do Header Title", "WWD_HEADER_TITLE") ?>
                 </div>
 
                 <div class="fw-semibold">
-                    <?= summon_editable("What We Do Header Content", "WWD_HEADER_CONTENT") ?>
+                    <?= summon_editable_ckeditor("What We Do Header Content", "WWD_HEADER_CONTENT") ?>
                 </div>
             </div>
             <div class="col-6">

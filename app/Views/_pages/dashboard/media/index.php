@@ -27,11 +27,11 @@
         <div class="bg-warning pt-1" style="max-width: 100px"></div>
 
         <div class="h3 fw-semibold">
-            <?= summon_editable("Media Header Title", "MEDIA_HEADER_TITLE") ?>
+            <?= summon_editable_ckeditor("Media Header Title", "MEDIA_HEADER_TITLE") ?>
         </div>
 
         <div class="fw-semibold">
-            <?= summon_editable("Media Header Content", "MEDIA_HEADER_CONTENT") ?>
+            <?= summon_editable_ckeditor("Media Header Content", "MEDIA_HEADER_CONTENT") ?>
         </div>
     </section>
 
@@ -103,11 +103,11 @@
                 <div class="bg-warning pt-1" style="max-width: 100px"></div>
 
                 <div class="h3 fw-semibold">
-                    <?= summon_editable("Presentations Title", "MEDIA_PRESENTATIONS_TITLE") ?>
+                    <?= summon_editable_ckeditor("Presentations Title", "MEDIA_PRESENTATIONS_TITLE") ?>
                 </div>
 
                 <div class="fw-semibold">
-                    <?= summon_editable("Presentations Subtitle", "MEDIA_PRESENTATIONS_SUBTITLE") ?>
+                    <?= summon_editable_ckeditor("Presentations Subtitle", "MEDIA_PRESENTATIONS_SUBTITLE") ?>
                 </div>
             </div>
             <div class="col-8">

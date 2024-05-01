@@ -30,11 +30,11 @@
                 <div class="bg-warning pt-1" style="max-width: 100px"></div>
 
                 <div class="h3 fw-semibold">
-                    <?= summon_editable("About Header Title", "ABOUT_HEADER_TITLE") ?>
+                    <?= summon_editable("About Header Title", "ABOUT_HEADER_TITLE", true) ?>
                 </div>
 
                 <div class="fw-semibold">
-                    <?= summon_editable("About Header Content", "ABOUT_HEADER_CONTENT") ?>
+                    <?= summon_editable("About Header Content", "ABOUT_HEADER_CONTENT", true) ?>
                 </div>
             </div>
             <div class="col-6">
@@ -59,7 +59,7 @@
                     </div>
 
                     <div class="p">
-                        <?= summon_editable("Our vision is...", "ABOUT_VM_VISION_CONTENT") ?>
+                        <?= summon_editable_ckeditor("Our vision is...", "ABOUT_VM_VISION_CONTENT") ?>
                     </div>
 
                     <div class="h3">
@@ -67,7 +67,7 @@
                     </div>
 
                     <div class="p">
-                        <?= summon_editable("Our vision is...", "ABOUT_VM_MISSION_CONTENT") ?>
+                        <?= summon_editable_ckeditor("Our vision is...", "ABOUT_VM_MISSION_CONTENT") ?>
                     </div>
                 </div>
             </div>
@@ -119,7 +119,7 @@
                         <?= summon_editable("__ We __", "ABOUT_MORE_${i}_title") ?>
                     </div>
 
-                    <?= summon_editable("We __", "ABOUT_MORE_${i}_content") ?>
+                    <?= summon_editable("We __", "ABOUT_MORE_${i}_content", true) ?>
 
                     <small>
                         <?= summon_editable("Learn More Button", "ABOUT_MORE_${i}_button") ?>
@@ -133,7 +133,7 @@
     </section>
 
 
-    <section class="mt-4 bg-warning text-white">
+    <section class="mt-4 bg-warning text-dark">
         <div class="container">
             <small>
                 <?= summon_editable("Charter Tag", "ABOUT_CHARTER_TAG") ?>
@@ -152,7 +152,7 @@
                             <?= summon_editable("__ We __", "ABOUT_CHARTER_${i}_title") ?>
                         </div>
 
-                        <?= summon_editable("We __", "ABOUT_CHARTER_${i}_content") ?>
+                        <?= summon_editable_ckeditor("We __", "ABOUT_CHARTER_${i}_content") ?>
                     </div>
                 <?php endfor ?>
             </div>

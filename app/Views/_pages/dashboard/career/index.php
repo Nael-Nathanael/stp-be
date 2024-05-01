@@ -22,11 +22,11 @@
             <div class="bg-warning pt-1" style="max-width: 100px"></div>
 
             <div class="py-0 fw-semibold" style="font-size: 1.5rem">
-                <?= summon_editable("(Career Page Title)", "CAREER_HERO_TITLE") ?>
+                <?= summon_editable_ckeditor("(Career Page Title)", "CAREER_HERO_TITLE") ?>
             </div>
 
             <div class="lead py-0 fw-normal">
-                <?= summon_editable("(Career Page Subtitle)", "CAREER_HERO_SUBTITLE", false) ?>
+                <?= summon_editable_ckeditor("(Career Page Subtitle)", "CAREER_HERO_SUBTITLE") ?>
             </div>
         </div>
     </div>
@@ -60,11 +60,11 @@
                 <div class="bg-warning pt-1" style="max-width: 100px"></div>
 
                 <div class="h3 fw-semibold">
-                    <?= summon_editable("Career Header Title", "CAREER_HEADER_TITLE") ?>
+                    <?= summon_editable_ckeditor("Career Header Title", "CAREER_HEADER_TITLE") ?>
                 </div>
 
                 <div class="fw-semibold">
-                    <?= summon_editable("Career Header Content", "CAREER_HEADER_CONTENT") ?>
+                    <?= summon_editable_ckeditor("Career Header Content", "CAREER_HEADER_CONTENT") ?>
                 </div>
             </div>
         </div>
@@ -78,11 +78,11 @@
         <div class="bg-warning pt-1" style="max-width: 100px"></div>
 
         <div class="h3 fw-semibold">
-            <?= summon_editable("Career Title", "CAREER_CORE_TITLE") ?>
+            <?= summon_editable_ckeditor("Career Title", "CAREER_CORE_TITLE") ?>
         </div>
 
         <div class="fw-semibold">
-            <?= summon_editable("Career Subtitle", "CAREER_CORE_SUBTITLE") ?>
+            <?= summon_editable_ckeditor("Career Subtitle", "CAREER_CORE_SUBTITLE") ?>
         </div>
 
         <div class="my-3 bg-secondary py-5 d-flex justify-content-center align-items-center">

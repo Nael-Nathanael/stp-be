@@ -58,6 +58,17 @@ if (!function_exists('summon_editable')) {
         ]);
     }
 }
+
+if (!function_exists('summon_editable_ckeditor')) {
+    function summon_editable_ckeditor(string $label, string $id): string
+    {
+        return view("_components/CKEDITOR", [
+            "field_id" => $id,
+            "field_label" => $label,
+        ]);
+    }
+}
+
 if (!function_exists('summon_image_field')) {
     function summon_image_field(string $field_id): string
     {

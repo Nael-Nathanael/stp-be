@@ -23,11 +23,11 @@
                 <div class="bg-warning pt-1" style="max-width: 100px"></div>
 
                 <div class="py-0 fw-semibold" style="font-size: 1.5rem">
-                    <?= summon_editable("(Contact Page Title)", "CONTACT_HERO_TITLE") ?>
+                    <?= summon_editable_ckeditor("(Contact Page Title)", "CONTACT_HERO_TITLE") ?>
                 </div>
 
                 <div class="lead py-0 fw-normal">
-                    <?= summon_editable("(Contact Page Subtitle)", "CONTACT_HERO_SUBTITLE") ?>
+                    <?= summon_editable_ckeditor("(Contact Page Subtitle)", "CONTACT_HERO_SUBTITLE") ?>
                 </div>
             </div>
             <div class="col-6">
