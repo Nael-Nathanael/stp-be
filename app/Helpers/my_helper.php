@@ -21,6 +21,18 @@ if (!function_exists('currLang')) {
         return session()->get("LANG");
     }
 }
+
+if (!function_exists('isDev')) {
+    function isDev(): bool
+    {
+        if (session()->get("STP_isDev") == null) {
+            session()->set("STP_isDev", false);
+        }
+
+        return session()->get("STP_isDev");
+    }
+}
+
 if (!function_exists('labelLang')) {
     function labelLang($lang): string
     {

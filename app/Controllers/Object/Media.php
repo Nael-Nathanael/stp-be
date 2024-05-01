@@ -48,13 +48,8 @@ class Media extends BaseController
          */
         $post = $this->request->getJSON();
 
-        /**
-         * @type string[] $result
-         */
-        $result = [];
-
         foreach ($post as $key) {
-            $result->$key = $media->getOrPlaceholderByKey($key);
+            $post[$key] = $media->getOrPlaceholderByKey($key);
         }
 
         return $this->response->setJSON($post);

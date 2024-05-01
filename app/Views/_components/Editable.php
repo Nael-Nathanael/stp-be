@@ -9,6 +9,9 @@ $iconSize = 25;
 ?>
 
 <div class="stpfield">
+    <?php if (isDev()): ?>
+        <code><?= $field_id ?></code>
+    <?php endif ?>
     <?php if ($field_multiple): ?>
         <textarea
                 id="<?= $field_id ?>"

@@ -68,6 +68,14 @@
                         <?= call("MENU_CONTACTUS", "Contact Us") ?>
                     </a>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link btn btn-sm btn-outline-danger"
+                       href="<?= route_to("auth.logout") ?>"
+                    >
+                        Logout
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

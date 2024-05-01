@@ -16,6 +16,13 @@ class Home extends BaseController
     {
         if ($this->request->getPost("password") == "admin") {
             session()->set("logged_in", true);
+            session()->set("STP_isDev", false);
+
+            return redirect()->route("dashboard.landing.index");
+        } elseif ($this->request->getPost("password") == "dev") {
+            session()->set("logged_in", true);
+            session()->set("STP_isDev", true);
+
             return redirect()->route("dashboard.landing.index");
         }
         return redirect()->to(base_url());
