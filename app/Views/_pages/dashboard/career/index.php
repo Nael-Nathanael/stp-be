@@ -84,10 +84,6 @@
         <div class="fw-semibold">
             <?= summon_editable_ckeditor("Career Subtitle", "CAREER_CORE_SUBTITLE") ?>
         </div>
-
-        <div class="my-3 bg-secondary py-5 d-flex justify-content-center align-items-center">
-            Coming Soon: Career Editor
-        </div>
     </section>
 
     <section class="py-5 bg-dark d-flex justify-content-center align-items-center text-white">

@@ -188,7 +188,7 @@
             <?= summon_editable("Contact Us Tag", "HOME_CONTACT_US_TAG") ?>
         </div>
         <div class="fw-semibold h3">
-            <?= summon_editable("Contact Us Title", "HOME_CONTACT_US_TITLE") ?>
+            <?= summon_editable_ckeditor("Contact Us Title", "HOME_CONTACT_US_TITLE") ?>
         </div>
         <div>
             <?= summon_editable("Contact Us Button", "HOME_CONTACT_US_BUTTON") ?>
