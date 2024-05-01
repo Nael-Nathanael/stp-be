@@ -22,11 +22,11 @@
             <div class="bg-warning pt-1" style="max-width: 100px"></div>
 
             <div class="py-0 fw-semibold" style="font-size: 1.5rem">
-                <?= summon_editable_ckeditor("(Career Page Title)", "CAREER_HERO_TITLE") ?>
+                <?= summon_editable("(Career Page Title)", "CAREER_HERO_TITLE") ?>
             </div>
 
             <div class="lead py-0 fw-normal">
-                <?= summon_editable_ckeditor("(Career Page Subtitle)", "CAREER_HERO_SUBTITLE") ?>
+                <?= summon_editable("(Career Page Subtitle)", "CAREER_HERO_SUBTITLE") ?>
             </div>
         </div>
     </div>
