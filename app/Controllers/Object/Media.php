@@ -14,7 +14,7 @@ class Media extends BaseController
 
         // upload #key
         $path = $this->request->getFile($key);
-        $path->move(UPLOAD_FOLDER_URL);
+        $path->move(UPLOAD_FOLDER_URL, null, true);
 
         $media = model("STPMedia");
         $media->save(
