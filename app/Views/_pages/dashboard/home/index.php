@@ -54,11 +54,11 @@
                 <div class="bg-warning pt-1" style="max-width: 100px"></div>
 
                 <div class="h3 fw-semibold">
-                    <?= summon_editable("Home Header Title", "HOME_HEADER_TITLE") ?>
+                    <?= summon_editable("Home Header Title", "HOME_HEADER_TITLE", true) ?>
                 </div>
 
                 <div class="fw-semibold">
-                    <?= summon_editable("Home Header Content", "HOME_HEADER_CONTENT") ?>
+                    <?= summon_editable("Home Header Content", "HOME_HEADER_CONTENT", true) ?>
                 </div>
             </div>
             <div class="col-6">
