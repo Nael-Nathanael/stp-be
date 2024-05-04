@@ -90,7 +90,7 @@
         </div>
     </section>
 
-    <section class="container my-4">
+    <section class="container my-4 text-white">
         <div class="p-5 position-relative"
              style="background: url('<?= callMedia("HOME_SUST_BG") ?>') center;
                      background-size: cover;"

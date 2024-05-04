@@ -30,11 +30,11 @@
                 <div class="bg-warning pt-1" style="max-width: 100px"></div>
 
                 <div class="h3 fw-semibold">
-                    <?= summon_editable("About Header Title", "ABOUT_HEADER_TITLE", true) ?>
+                    <?= summon_editable_ckeditor("About Header Title", "ABOUT_HEADER_TITLE") ?>
                 </div>
 
                 <div class="fw-semibold">
-                    <?= summon_editable("About Header Content", "ABOUT_HEADER_CONTENT", true) ?>
+                    <?= summon_editable_ckeditor("About Header Content", "ABOUT_HEADER_CONTENT") ?>
                 </div>
             </div>
             <div class="col-6">
@@ -94,6 +94,11 @@
         </div>
 
         <?= summon_image_field("ABOUT_MILESTONE_IMAGE") ?>
+
+        <small>
+            Image for Phone
+            <?= summon_image_field("ABOUT_MILESTONE_IMAGE_SM") ?>
+        </small>
     </section>
 
 
@@ -146,7 +151,16 @@
             <div class="row g-4">
                 <?php for ($i = 1; $i <= 6; $i++) : ?>
                     <div class="col-4">
-                        <?= summon_image_field("ABOUT_CHARTER_$i") ?>
+                        <div class="d-flex gap-2 align-items-start">
+                            <div style="
+                                    aspect-ratio: 1 / 1;
+                                    width: 100px;
+                                    background: url('<?= $GLOBALS['stp_media']->getOrPlaceholderByKey("ABOUT_CHARTER_$i") ?>') center;
+                                    background-size: cover;
+                                    " class="position-relative">
+                            </div>
+                            <?= summon_image_button("ABOUT_CHARTER_$i") ?>
+                        </div>
 
                         <div class="h4 mb-0">
                             <?= summon_editable("__ We __", "ABOUT_CHARTER_${i}_title") ?>
