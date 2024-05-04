@@ -39,11 +39,11 @@
 <div>
     <section class="my-4 container p-2 border border-danger border-2" style="background-color: #f8d7da">
         <div class="h3 fw-semibold">
-            <?= summon_editable("Beware Fraud Title", "CAREER_CORE_TITLE") ?>
+            <?= summon_editable("Beware Fraud Title", "CAREER_BEWARE_TITLE") ?>
         </div>
 
         <div class="fw-semibold">
-            <?= summon_editable("Beware Fraud Content", "CAREER_CORE_SUBTITLE") ?>
+            <?= summon_editable_ckeditor("Beware Fraud Content", "CAREER_BEWARE_SUBTITLE") ?>
         </div>
     </section>
 

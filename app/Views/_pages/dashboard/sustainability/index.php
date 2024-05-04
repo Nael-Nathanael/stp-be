@@ -42,21 +42,7 @@
 
 
     <section class="my-4 container">
-        <div class="small fw-semibold">
-            <?= summon_editable("Sustainability Report Header Tag", "SUSTAINABILITY_FINS_TAG") ?>
-        </div>
-
-        <div class="bg-warning pt-1" style="max-width: 100px"></div>
-
-        <div class="h3 fw-semibold">
-            <?= summon_editable("Sustainability Report Title", "SUSTAINABILITY_FINS_TITLE") ?>
-        </div>
-
-        <div class="fw-semibold">
-            <?= summon_editable("Sustainability Report Subtitle", "SUSTAINABILITY_FINS_SUBTITLE") ?>
-        </div>
-
-        <div class="my-3 bg-secondary py-5 d-flex justify-content-center align-items-center">
+        <div class="my-3 bg-secondary py-5 d-flex justify-content-center align-items-center" style="min-height: 300px">
             Coming Soon: Sustainability Report Editor
         </div>
     </section>
