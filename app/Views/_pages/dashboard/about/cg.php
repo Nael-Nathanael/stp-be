@@ -39,7 +39,7 @@
 
 <div>
     <section class="my-4 container">
-        <div class="row align-items-center">
+        <div class="row">
             <div class="col-6">
                 <div class="small fw-semibold">
                     <?= summon_editable("Corporate Governance Header Tag", "CG_HEADER_TAG") ?>
@@ -57,6 +57,9 @@
             </div>
             <div class="col-6">
                 <?= summon_image_field("CG_HEADER_RIGHT_IMG") ?>
+                <div class="w-50">
+                    <?= summon_image_field("CG_HEADER_RIGHT_IMG_OPT") ?>
+                </div>
             </div>
         </div>
     </section>
