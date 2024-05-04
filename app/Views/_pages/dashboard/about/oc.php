@@ -41,24 +41,24 @@
     <section class="my-4 container">
         <div class="row">
             <div class="col-6">
-                <?= summon_image_field("OG_HEADER_LEFT_IMG") ?>
+                <?= summon_image_field("OC_HEADER_LEFT_IMG") ?>
                 <div class="w-50">
-                    <?= summon_image_field("OG_HEADER_LEFT_IMG_OPT") ?>
+                    <?= summon_image_field("OC_HEADER_LEFT_IMG_OPT") ?>
                 </div>
             </div>
             <div class="col-6">
                 <div class="small fw-semibold">
-                    <?= summon_editable("Our Code Header Tag", "OG_HEADER_TAG") ?>
+                    <?= summon_editable("Our Code Header Tag", "OC_HEADER_TAG") ?>
                 </div>
 
                 <div class="bg-warning pt-1" style="max-width: 100px"></div>
 
                 <div class="h3 fw-semibold">
-                    <?= summon_editable_ckeditor("Our Code Header Title", "OG_HEADER_TITLE") ?>
+                    <?= summon_editable_ckeditor("Our Code Header Title", "OC_HEADER_TITLE") ?>
                 </div>
 
                 <div class="fw-semibold">
-                    <?= summon_editable_ckeditor("Our Code Header Content", "OG_HEADER_CONTENT") ?>
+                    <?= summon_editable_ckeditor("Our Code Header Content", "OC_HEADER_CONTENT") ?>
                 </div>
             </div>
         </div>
@@ -71,7 +71,7 @@
     </section>
 
     <section class="container my-4">
-        <?= summon_editable_ckeditor("Our Code Extra Content", "OG_EXTRAS") ?>
+        <?= summon_editable_ckeditor("Our Code Extra Content", "OC_EXTRAS") ?>
     </section>
 
     <section class="py-5 bg-dark d-flex justify-content-center align-items-center text-white">
