@@ -36,21 +36,7 @@
     </section>
 
     <section class="my-4 container">
-        <div class="small fw-semibold">
-            <?= summon_editable("Announcement Tag", "MEDIA_ANNOUNCEMENT_TAG") ?>
-        </div>
-
-        <div class="bg-warning pt-1" style="max-width: 100px"></div>
-
-        <div class="h3 fw-semibold">
-            <?= summon_editable("Announcement Title", "MEDIA_ANNOUNCEMENT_TITLE") ?>
-        </div>
-
-        <div class="fw-semibold">
-            <?= summon_editable("Announcement Subtitle", "MEDIA_ANNOUNCEMENT_SUBTITLE") ?>
-        </div>
-
-        <div class="my-3 bg-secondary py-5 d-flex justify-content-center align-items-center">
+        <div class="my-3 bg-secondary py-5 d-flex justify-content-center align-items-center" style="min-height: 300px">
             Coming Soon: Announcement Editor
         </div>
     </section>
@@ -94,27 +80,8 @@
 
 
     <section class="my-4 container">
-        <div class="row">
-            <div class="col-4">
-                <div class="small fw-semibold">
-                    <?= summon_editable("Presentations Header Tag", "MEDIA_PRESENTATIONS_TAG") ?>
-                </div>
-
-                <div class="bg-warning pt-1" style="max-width: 100px"></div>
-
-                <div class="h3 fw-semibold">
-                    <?= summon_editable_ckeditor("Presentations Title", "MEDIA_PRESENTATIONS_TITLE") ?>
-                </div>
-
-                <div class="fw-semibold">
-                    <?= summon_editable_ckeditor("Presentations Subtitle", "MEDIA_PRESENTATIONS_SUBTITLE") ?>
-                </div>
-            </div>
-            <div class="col-8">
-                <div class="my-3 bg-secondary py-5 d-flex justify-content-center align-items-center">
-                    Coming Soon: Presentations Editor
-                </div>
-            </div>
+        <div class="my-3 bg-secondary py-5 d-flex justify-content-center align-items-center" style="min-height: 300px">
+            Coming Soon: Presentations Editor
         </div>
     </section>
 
