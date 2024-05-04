@@ -1,6 +1,8 @@
 <?php
 /**
  * @var String $field_id
+ * @var Array $ratio
+ * @var Array $res
  * @var STPMedia $medias
  */
 
@@ -10,10 +12,13 @@ $medias = model("STPMedia");
 ?>
 
 <div class="position-relative">
-    <img src="<?= $medias->getOrPlaceholderByKey($field_id) ?>" class="w-100 rounded" alt=""
-         style="aspect-ratio: 16 / 9; object-fit: cover;">
+    <img src="<?= $medias->getOrNoneByKey($field_id) ?? "https://via.placeholder.com/$res[0]x$res[1].png" ?>"
+         class="w-100 rounded" alt=""
+         style="aspect-ratio: <?= $ratio[0] ?> / <?= $ratio[1] ?>; object-fit: cover;">
     <div class="position-absolute top-0 end-0 m-2">
         <?= summon_image_button($field_id) ?>
     </div>
-    <div class="text-end small text-danger">*recommended 1,280px x 720px (16 : 9 ratio)</div>
+    <div class="text-end small text-danger">*recommended <?= $res[0] ?>px x <?= $res[1] ?>px
+        (<?= $ratio[0] ?> : <?= $ratio[1] ?> ratio)
+    </div>
 </div>

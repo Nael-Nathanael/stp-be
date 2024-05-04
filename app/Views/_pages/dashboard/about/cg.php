@@ -139,14 +139,6 @@
                 [
                     "name" => "Board and Management",
                     "url" => route_to("dashboard.about.bnm"),
-                ],
-                [
-                    "name" => "Corporate Governance",
-                    "url" => route_to("dashboard.about.cg"),
-                ],
-                [
-                    "name" => "Our Code",
-                    "url" => route_to("dashboard.about.oc"),
                 ]
             ]
             ?>
@@ -166,10 +158,6 @@
                             <?= summon_editable("Button's URL", "ABOUT_MORE_${i}_button_url") ?>
                         </small>
                     </small>
-
-                    <a href="<?= $subpages[$i - 1]['url'] ?>" class="btn btn-sm btn-primary mt-3">
-                        Edit <b><?= $subpages[$i - 1]['name'] ?></b> Page
-                    </a>
                 </div>
             <?php endfor ?>
         </div>

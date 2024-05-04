@@ -70,11 +70,13 @@ if (!function_exists('summon_editable_ckeditor')) {
 }
 
 if (!function_exists('summon_image_field')) {
-    function summon_image_field(string $field_id): string
+    function summon_image_field(string $field_id, array $ratio = [16, 9], array $res = [1280, 720]): string
     {
         return view("_components/LinesImageClickToChangeField",
             [
                 "field_id" => $field_id,
+                "ratio" => $ratio,
+                "res" => $res
             ]
         );
     }

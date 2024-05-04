@@ -23,4 +23,13 @@ class STPMedia extends Model
         }
         return $target->url;
     }
+
+    function getOrNoneByKey($key): ?string
+    {
+        $target = $this->find($key);
+        if (!$target) {
+            return null;
+        }
+        return $target->url;
+    }
 }

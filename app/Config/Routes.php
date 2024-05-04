@@ -40,7 +40,12 @@ $routes->group('dashboard', function ($routes) {
     $routes->get("", "Dashboard::index", ["as" => "dashboard.landing"]);
 
     $routes->get('landing', "Dashboard\Landing::index", ["as" => "dashboard.landing.index"]);
+
     $routes->get('about-us', "Dashboard\About::index", ["as" => "dashboard.about.index"]);
+    $routes->get('about-us/board-and-management', "Dashboard\About::bnm", ["as" => "dashboard.about.bnm"]);
+    $routes->get('about-us/corporate-governance', "Dashboard\About::cg", ["as" => "dashboard.about.cg"]);
+    $routes->get('about-us/our-code', "Dashboard\About::oc", ["as" => "dashboard.about.oc"]);
+
     $routes->get('what-we-do', "Dashboard\WhatWeDo::index", ["as" => "dashboard.what-we-do.index"]);
     $routes->get('partnerships', "Dashboard\Partnerships::index", ["as" => "dashboard.partnerships.index"]);
     $routes->get('sustainability', "Dashboard\Sustainability::index", ["as" => "dashboard.sustainability.index"]);
