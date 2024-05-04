@@ -99,7 +99,7 @@
                     </div>
                 </div>
                 <div class="col-6">
-                    <?= summon_image_field("WWD_PRODUCT_BG_LEFT") ?>
+                    <?= summon_image_field("WWD_LOCATION_BG_LEFT") ?>
                 </div>
             </div>
         </div>
