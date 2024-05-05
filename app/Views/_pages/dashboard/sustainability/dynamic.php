@@ -46,7 +46,7 @@ $label = ucfirst(strtolower($segment)) . " Aspect"
     <section class="my-4 w-100 position-relative py-5"
              style="background: url('<?= $GLOBALS['stp_media']->getOrPlaceholderByKey("${segment}_BANNER_BG") ?>') center no-repeat; background-size: cover"
     >
-        <div class="position-absolute top-0 end-0 p-2">
+        <div class="position-absolute top-0 end-0 p-2" style=" z-index: 101;">
             <?= summon_image_button("${segment}_BANNER_BG") ?>
         </div>
 
