@@ -24,31 +24,73 @@
                     let tableEl = document.getElementById("<?=$segment?>tableBody");
                     tableEl.innerHTML = ""
 
-                    for (const response of responseFull) {
+                    for (const idx in responseFull) {
+                        const response = responseFull[idx]
                         tableEl.innerHTML += `
-                            <tr data-id='tr-${response.id}'>
-                                <td>
-                                    <button type="button" class="btn btn-danger btn-sm" onclick="<?=$segment?>confirmDelete('${response.id}')">
-                                        Delete
-                                    </button>
-                                </td>
-                                <?php if (in_array("TAG", $fields)): ?>
-                                    <td>${response.tag}</td>
-                                <?php endif ?>
-                                <?php if (in_array("TITLE", $fields)): ?>
-                                    <td>${response.title}</td>
-                                <?php endif ?>
-                                <?php if (in_array("DESCRIPTION", $fields)): ?>
-                                    <td>${response.description}</td>
-                                <?php endif ?>
-                                <?php if (in_array("URL", $fields)): ?>
-                                    <td class="text-center">
-                                        <a href="${response.url}" target="_blank" rel="noreferrer" class="btn btn-success btn-sm" type="button">
-                                            Download
-                                        </a>
-                                    </td>
-                                <?php endif ?>
-                            </tr>
+                <tr data-id='tr-${response.id}' class="${idx % 2 !== 0 ? 'table-secondary' : ''}">
+                    <td rowspan="3" style='vertical-align: middle'>
+                        <button type="button" class="btn btn-danger btn-sm" onclick="<?=$segment?>confirmDelete('${response.id}')">
+                            Delete
+                        </button>
+                    </td>
+                    <td>ID</td>
+                    <?php if (in_array("TAG", $fields)): ?>
+                        <td>${response.tag_ID}</td>
+                    <?php endif ?>
+                    <?php if (in_array("TITLE", $fields)): ?>
+                        <td>${response.title_ID}</td>
+                    <?php endif ?>
+                    <?php if (in_array("DESCRIPTION", $fields)): ?>
+                        <td>${response.description_ID}</td>
+                    <?php endif ?>
+                    <?php if (in_array("URL", $fields)): ?>
+                        <td class="text-center">
+                            <a href="${response.url_ID}" target="_blank" rel="noreferrer" class="btn btn-success btn-sm" type="button">
+                                Download
+                            </a>
+                        </td>
+                    <?php endif ?>
+                </tr>
+
+                <tr data-id='tr-${response.id}' class="${idx % 2 !== 0 ? 'table-secondary' : ''}">
+                    <td>EN</td>
+                    <?php if (in_array("TAG", $fields)): ?>
+                        <td>${response.tag}</td>
+                    <?php endif ?>
+                    <?php if (in_array("TITLE", $fields)): ?>
+                        <td>${response.title}</td>
+                    <?php endif ?>
+                    <?php if (in_array("DESCRIPTION", $fields)): ?>
+                        <td>${response.description}</td>
+                    <?php endif ?>
+                    <?php if (in_array("URL", $fields)): ?>
+                        <td class="text-center">
+                            <a href="${response.url}" target="_blank" rel="noreferrer" class="btn btn-success btn-sm" type="button">
+                                Download
+                            </a>
+                        </td>
+                    <?php endif ?>
+                </tr>
+
+                <tr data-id='tr-${response.id}' class="${idx % 2 !== 0 ? 'table-secondary' : ''}">
+                    <td>CN</td>
+                    <?php if (in_array("TAG", $fields)): ?>
+                        <td>${response.tag_CN}</td>
+                    <?php endif ?>
+                    <?php if (in_array("TITLE", $fields)): ?>
+                        <td>${response.title_CN}</td>
+                    <?php endif ?>
+                    <?php if (in_array("DESCRIPTION", $fields)): ?>
+                        <td>${response.description_CN}</td>
+                    <?php endif ?>
+                    <?php if (in_array("URL", $fields)): ?>
+                        <td class="text-center">
+                            <a href="${response.url_CN}" target="_blank" rel="noreferrer" class="btn btn-success btn-sm" type="button">
+                                Download
+                            </a>
+                        </td>
+                    <?php endif ?>
+                </tr>
                         `
                     }
                 })
@@ -78,11 +120,32 @@
                 let tableEl = document.getElementById("<?=$segment?>tableBody");
                 tableEl.innerHTML += `
                 <tr data-id='tr-${response.id}'>
-                    <td>
+                    <td rowspan="3">
                         <button type="button" class="btn btn-danger btn-sm" onclick="<?=$segment?>confirmDelete('${response.id}')">
                             Delete
                         </button>
                     </td>
+                    <td>ID</td>
+                    <?php if (in_array("TAG", $fields)): ?>
+                        <td>${response.tag_ID}</td>
+                    <?php endif ?>
+                    <?php if (in_array("TITLE", $fields)): ?>
+                        <td>${response.title_ID}</td>
+                    <?php endif ?>
+                    <?php if (in_array("DESCRIPTION", $fields)): ?>
+                        <td>${response.description_ID}</td>
+                    <?php endif ?>
+                    <?php if (in_array("URL", $fields)): ?>
+                        <td class="text-center">
+                            <a href="${response.url_ID}" target="_blank" rel="noreferrer" class="btn btn-success btn-sm" type="button">
+                                Download
+                            </a>
+                        </td>
+                    <?php endif ?>
+                </tr>
+
+                <tr data-id='tr-${response.id}'>
+                    <td>EN</td>
                     <?php if (in_array("TAG", $fields)): ?>
                         <td>${response.tag}</td>
                     <?php endif ?>
@@ -95,6 +158,26 @@
                     <?php if (in_array("URL", $fields)): ?>
                         <td class="text-center">
                             <a href="${response.url}" target="_blank" rel="noreferrer" class="btn btn-success btn-sm" type="button">
+                                Download
+                            </a>
+                        </td>
+                    <?php endif ?>
+                </tr>
+
+                <tr data-id='tr-${response.id}'>
+                    <td>CN</td>
+                    <?php if (in_array("TAG", $fields)): ?>
+                        <td>${response.tag_CN}</td>
+                    <?php endif ?>
+                    <?php if (in_array("TITLE", $fields)): ?>
+                        <td>${response.title_CN}</td>
+                    <?php endif ?>
+                    <?php if (in_array("DESCRIPTION", $fields)): ?>
+                        <td>${response.description_CN}</td>
+                    <?php endif ?>
+                    <?php if (in_array("URL", $fields)): ?>
+                        <td class="text-center">
+                            <a href="${response.url_CN}" target="_blank" rel="noreferrer" class="btn btn-success btn-sm" type="button">
                                 Download
                             </a>
                         </td>
@@ -122,7 +205,9 @@
         const url = "<?= base_url("/object/documents/$segment") ?>/" + id
         const deleted = await confirmBeforeDelete(url, "Remove this document from the list?", "Removed document cannot be restored");
         if (deleted) {
-            document.querySelector(`tr[data-id='tr-${id}']`).remove()
+            for (const elem of document.querySelectorAll(`tr[data-id='tr-${id}']`)) {
+                elem.remove()
+            }
             Swal.fire("Success!", "Document has been removed", "success")
         }
     }

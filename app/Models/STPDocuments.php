@@ -11,6 +11,22 @@ class STPDocuments extends Model
     protected $useAutoIncrement = true;
     protected $returnType = 'object';
     protected $useSoftDeletes = false;
-    protected $allowedFields = ['id', 'type', 'tag', 'title', 'description', 'url', 'createdAt'];
+    protected $allowedFields = [
+        'id',
+        'type',
+        'tag',
+        'tag_ID',
+        'tag_CN',
+        'title',
+        'title_ID',
+        'title_CN',
+        'description',
+        'description_ID',
+        'description_CN',
+        'url',
+        'url_ID',
+        'url_CN',
+        'createdAt'
+    ];
     protected $useTimestamps = false;
 }
