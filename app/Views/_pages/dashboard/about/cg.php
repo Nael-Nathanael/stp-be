@@ -68,16 +68,12 @@
         <?= view("_components/UseDoc", ["segment" => "BOARD_COMMITTEES", "label" => "Board Committees"]) ?>
     </section>
 
-    <section class="bg-light container my-4">
-        <div class="p-5 d-flex justify-content-center align-items-center">
-            Coming Soon: Governance Documents Editor
-        </div>
+    <section class="container my-4">
+        <?= view("_components/UseDoc", ["segment" => "GOVERNANCE", "label" => "Governance"]) ?>
     </section>
 
-    <section class="bg-light container my-4">
-        <div class="p-5 d-flex justify-content-center align-items-center">
-            Coming Soon: Requirement Standards Editor
-        </div>
+    <section class="container my-4">
+        <?= view("_components/UseDoc", ["segment" => "REQUIREMENT_STANDARDS", "label" => "Requirement Standards"]) ?>
     </section>
 </div>
 
@@ -86,4 +82,6 @@
 
 <?= $this->section("javascript") ?>
 <?= view("_components/UseDoc_js", ["segment" => "BOARD_COMMITTEES"]) ?>
+<?= view("_components/UseDoc_js", ["segment" => "GOVERNANCE"]) ?>
+<?= view("_components/UseDoc_js", ["segment" => "REQUIREMENT_STANDARDS"]) ?>
 <?= $this->endSection(); ?>

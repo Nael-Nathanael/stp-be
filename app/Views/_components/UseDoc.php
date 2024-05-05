@@ -8,14 +8,14 @@
 <button
         data-bs-toggle="modal"
         onclick="<?= $segment ?>onOpen()"
-        data-bs-target="#exampleModal"
+        data-bs-target="#<?= $segment ?>-MODAL"
         class="btn btn-outline-primary w-100 h-100 py-5 d-flex justify-content-center align-items-center"
 >
     Manage "<?= $label ?>" Document Section
 </button>
 
 <!-- Modal -->
-<div class="modal fade rounded" id="exampleModal"
+<div class="modal fade rounded" id="<?= $segment ?>-MODAL"
      style="top: 20px; left: 20px; width: calc(100% - 40px); height: calc(100% - 40px)">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen mw-100">
         <div class="modal-content">
