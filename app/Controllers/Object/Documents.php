@@ -11,14 +11,8 @@ class Documents extends BaseController
     public function delete($section, $id): ResponseInterface
     {
         $docs = model("STPDocuments");
-        $instance = $docs->find($id);
-        if (!$instance) {
-            return $this->response->setStatusCode(404)->setJSON([
-                "message" => "Not Found"
-            ]);
-        }
 
-        $instance->delete();
+        $docs->delete($id);
         return $this->response->setJSON([
             "message" => "OK"
         ]);
@@ -61,12 +55,15 @@ class Documents extends BaseController
 
     public function list($section): ResponseInterface
     {
-        $limit = array_key_exists("limit", $_GET) && intval($_GET['limit']) ? intval($_GET['limit']) : 10;
-        $page = array_key_exists("page", $_GET) && intval($_GET['page']) ? intval($_GET['page']) : 1;
+//        $limit = array_key_exists("limit", $_GET) && intval($_GET['limit']) ? intval($_GET['limit']) : 10;
+//        $page = array_key_exists("page", $_GET) && intval($_GET['page']) ? intval($_GET['page']) : 1;
 
         $docs = model("STPDocuments");
         return $this->response->setJSON(
-            $docs->where("type", $section)->findAll($limit, ($page - 1) * $limit)
+            $docs->where("type", $section)
+                ->orderBy("createdAt", "DESC")
+                ->findAll()
+//                ->findAll($limit, ($page - 1) * $limit)
         );
     }
 }

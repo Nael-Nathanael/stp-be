@@ -107,6 +107,7 @@
                                 <table class="table table-hover table-bordered">
                                     <thead>
                                     <tr>
+                                        <th nowrap></th>
                                         <th nowrap class="w-100">File Description</th>
                                         <th nowrap>Document Link</th>
                                     </tr>
@@ -191,20 +192,21 @@
                     let tableEl = document.getElementById("tableBody");
 
                     for (const response of responseFull) {
-                        let newTr = document.createElement("tr");
-                        let newTd1 = document.createElement("td");
-                        let newTd2 = document.createElement("td");
-                        newTd1.textContent = response.description;
-                        newTd2.classList.add("text-center")
-                        newTd2.innerHTML = `
-        <a href="${response.url}" target="_blank" rel="noreferrer" class="btn btn-success btn-sm" type="button">
-            Download
-        </a>
-                `;
-
-                        newTr.appendChild(newTd1);
-                        newTr.appendChild(newTd2);
-                        tableEl.appendChild(newTr);
+                        tableEl.innerHTML += `
+                            <tr data-id='tr-${response.id}'>
+                                <td>
+                                    <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete('${response.id}')">
+                                        Delete
+                                    </button>
+                                </td>
+                                <td>${response.description}</td>
+                                <td class="text-center">
+                                    <a href="${response.url}" target="_blank" rel="noreferrer" class="btn btn-success btn-sm" type="button">
+                                        Download
+                                    </a>
+                                </td>
+                            </tr>
+                        `
                     }
                 })
     }
@@ -231,20 +233,36 @@
             })
             .then(response => {
                 let tableEl = document.getElementById("tableBody");
-                let newTr = document.createElement("tr");
-                let newTd1 = document.createElement("td");
-                let newTd2 = document.createElement("td");
-                newTd1.textContent = response.description;
-                newTd2.innerHTML = `
-        <a href="${response.url}" target="_blank" rel="noreferrer" class="btn btn-success btn-sm" type="button">
-            Download
-        </a>
-                `;
+                tableEl.innerHTML += `
+                <tr data-id='tr-${response.id}'>
+                    <td>
+                        <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete('${response.id}')">
+                            Delete
+                        </button>
+                    </td>
+                    <td>${response.description}</td>
+                    <td class="text-center">
+                        <a href="${response.url}" target="_blank" rel="noreferrer" class="btn btn-success btn-sm" type="button">
+                            Download
+                        </a>
+                    </td>
+                </tr>
+            `
+                document.querySelector("input#description").value = ""
+                document.querySelector("input#url").value = ""
+                closeCreateForm()
 
-                newTr.appendChild(newTd1);
-                newTr.appendChild(newTd2);
-                tableEl.appendChild(newTr);
+                Swal.fire("Success!", "Document registered successfully", "success")
             })
+    }
+
+    async function confirmDelete(id) {
+        const url = "<?= base_url("/object/documents/BOARD_COMMITTEES") ?>/" + id
+        const deleted = await confirmBeforeDelete(url, "Remove this document from the list?", "Removed document cannot be restored");
+        if (deleted) {
+            document.querySelector(`tr[data-id='tr-${id}']`).remove()
+            Swal.fire("Success!", "Document has been removed", "success")
+        }
     }
 
     function openCreateForm() {

@@ -254,6 +254,21 @@
         });
     }
 
+    async function confirmBeforeDelete(url, title = 'Hapus?', subtitle) {
+        const result = await Swal.fire({
+            title: title,
+            text: subtitle,
+            showCancelButton: true,
+            icon: "info",
+            confirmButtonText: "Confirm",
+        })
+        if (result.isConfirmed) {
+            await fetch(url, {method: "delete"})
+            return true;
+        }
+        return false
+    }
+
     function confirmBeforeSubmit(element, title = 'Konfirmasi?', subtitle, route = false) {
         function findFormParent(element) {
             if (element.tagName === 'FORM') {
