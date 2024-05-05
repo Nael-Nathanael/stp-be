@@ -40,8 +40,8 @@ section {
     display: block !important;
 }
 
-input:not(:placeholder-shown),
-textarea:not(:placeholder-shown) {
+input:not(:placeholder-shown):not(.form-control),
+textarea:not(:placeholder-shown):not(.form-control) {
     border: none;
     outline: none !important;
 }

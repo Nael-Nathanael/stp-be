@@ -14,7 +14,7 @@
     for PT. Sembilan Tiga Perdana website
 </div>
 <nav class="navbar mt-4 navbar-expand-lg navbar-light bg-light shadow-sm d-flex flex-column">
-    <div class="container-fluid">
+    <div class="container">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

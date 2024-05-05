@@ -77,6 +77,13 @@ $routes->group("object", function ($routes) {
         $routes->post('dumpUpload', "Object\Media::dumpUpload", ["as" => "object.media.dumpUpload"]);
         $routes->post('get', "Object\Media::get", ["as" => "object.media.get"]);
     });
+
+    $routes->group('documents', function ($routes) {
+        $routes->delete('(:segment)/(:segment)', "Object\Documents::delete/$1/$2", ["as" => "object.documents.delete"]);
+        $routes->patch('(:segment)/(:segment)', "Object\Documents::update/$1/$2", ["as" => "object.documents.update"]);
+        $routes->post('(:segment)', "Object\Documents::create/$1", ["as" => "object.documents.create"]);
+        $routes->get('(:segment)', "Object\Documents::list/$1", ["as" => "object.documents.list"]);
+    });
 });
 
 
