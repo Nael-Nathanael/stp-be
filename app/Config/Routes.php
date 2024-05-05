@@ -48,7 +48,10 @@ $routes->group('dashboard', function ($routes) {
 
     $routes->get('what-we-do', "Dashboard\WhatWeDo::index", ["as" => "dashboard.what-we-do.index"]);
     $routes->get('partnerships', "Dashboard\Partnerships::index", ["as" => "dashboard.partnerships.index"]);
+
     $routes->get('sustainability', "Dashboard\Sustainability::index", ["as" => "dashboard.sustainability.index"]);
+    $routes->get('sustainability/(:segment)', "Dashboard\Sustainability::dynamic/$1", ["as" => "dashboard.sustainability.dynamic"]);
+
     $routes->get('career', "Dashboard\Career::index", ["as" => "dashboard.career.index"]);
 
     $routes->get('media', "Dashboard\Media::index", ["as" => "dashboard.media.index"]);

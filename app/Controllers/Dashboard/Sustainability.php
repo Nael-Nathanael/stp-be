@@ -12,4 +12,13 @@ class Sustainability extends BaseController
         bindFlashdata($data);
         return view("_pages/dashboard/sustainability/index", $data);
     }
+
+    public function dynamic($segment): string
+    {
+        $data = [
+            "segment" => strtoupper($segment)
+        ];
+        bindFlashdata($data);
+        return view("_pages/dashboard/sustainability/dynamic", $data);
+    }
 }

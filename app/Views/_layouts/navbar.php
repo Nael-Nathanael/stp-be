@@ -68,11 +68,38 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= route_to("dashboard.sustainability.index") ?>">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
                         <?= call("MENU_SUSTAINABILITY", "Sustainability") ?>
                     </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li>
+                            <a class="dropdown-item" href="<?= route_to("dashboard.sustainability.index") ?>">
+                                Edit "Sustainability" Page
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item"
+                               href="<?= route_to("dashboard.sustainability.dynamic", "environment") ?>">
+                                Edit "Environment Aspect" Page
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item"
+                               href="<?= route_to("dashboard.sustainability.dynamic", "social") ?>">
+                                Edit "Social Aspect" Page
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item"
+                               href="<?= route_to("dashboard.sustainability.dynamic", "economic") ?>">
+                                Edit "Economic Aspect" Page
+                            </a>
+                        </li>
+                    </ul>
                 </li>
+
 
                 <li class="nav-item">
                     <a class="nav-link" href="<?= route_to("dashboard.career.index") ?>">
