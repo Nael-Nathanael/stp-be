@@ -71,23 +71,9 @@
     </section>
 
     <section class="my-4 container">
-        <div class="small fw-semibold">
-            <?= summon_editable("Career Tag", "CAREER_CORE_TAG") ?>
+        <div class="my-3 bg-secondary py-5 d-flex justify-content-center align-items-center" style="min-height: 300px">
+            Coming Soon: Career Editor
         </div>
-
-        <div class="bg-warning pt-1" style="max-width: 100px"></div>
-
-        <div class="h3 fw-semibold">
-            <?= summon_editable_ckeditor("Career Title", "CAREER_CORE_TITLE") ?>
-        </div>
-
-        <div class="fw-semibold">
-            <?= summon_editable_ckeditor("Career Subtitle", "CAREER_CORE_SUBTITLE") ?>
-        </div>
-    </section>
-
-    <section class="py-5 bg-dark d-flex justify-content-center align-items-center text-white">
-        Footer
     </section>
 </div>
 

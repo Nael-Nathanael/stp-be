@@ -36,9 +36,14 @@
 </head>
 <body>
 
-<?= view("_layouts/navbar") ?>
 
-<?= $this->renderSection("content") ?>
+<div class="min-vh-100 d-flex flex-column justify-content-between">
+    <div>
+        <?= view("_layouts/navbar") ?>
+        <?= $this->renderSection("content") ?>
+    </div>
+    <?= view("_layouts/footer") ?>
+</div>
 
 <!-- Option 1: Bootstrap Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

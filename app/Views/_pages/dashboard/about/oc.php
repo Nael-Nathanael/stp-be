@@ -73,10 +73,6 @@
     <section class="container my-4">
         <?= summon_editable_ckeditor("Our Code Extra Content", "OC_EXTRAS") ?>
     </section>
-
-    <section class="py-5 bg-dark d-flex justify-content-center align-items-center text-white">
-        Footer
-    </section>
 </div>
 
 

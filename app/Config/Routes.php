@@ -51,7 +51,9 @@ $routes->group('dashboard', function ($routes) {
     $routes->get('sustainability', "Dashboard\Sustainability::index", ["as" => "dashboard.sustainability.index"]);
     $routes->get('career', "Dashboard\Career::index", ["as" => "dashboard.career.index"]);
     $routes->get('media', "Dashboard\Media::index", ["as" => "dashboard.media.index"]);
+
     $routes->get('contact-us', "Dashboard\ContactUs::index", ["as" => "dashboard.contact-us.index"]);
+    $routes->get('contact-us/submitted', "Dashboard\ContactUs::post", ["as" => "dashboard.contact-us.post"]);
 });
 
 $routes->group("object", function ($routes) {

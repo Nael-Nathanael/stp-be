@@ -2,6 +2,7 @@
 /**
  * @var String $field_id
  * @var String $field_label
+ * @var int $min_height
  */
 ?>
 <?php $strings = model("STPStrings"); ?>
@@ -16,7 +17,7 @@
     <div class="document-editor__toolbar_<?= $field_id ?> border-0" id="toolbar_<?= $field_id ?>"></div>
     <div>
         <div id="editor<?= $field_id ?>" class="editor<?= $field_id ?> border shadow-none"
-             style="min-height: 150px">
+             style="min-height: <?= $min_height ?>px">
         </div>
     </div>
 </div>

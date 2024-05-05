@@ -85,10 +85,6 @@
             Coming Soon: Management Editor
         </div>
     </section>
-
-    <section class="py-5 bg-dark d-flex justify-content-center align-items-center text-white">
-        Footer
-    </section>
 </div>
 
 

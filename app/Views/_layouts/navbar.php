@@ -27,10 +27,33 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= route_to("dashboard.about.index") ?>">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
                         <?= call("MENU_ABOUT", "About") ?>
                     </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li>
+                            <a class="dropdown-item" href="<?= route_to("dashboard.about.index") ?>">
+                                Edit "About Us" Page
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="<?= route_to("dashboard.about.bnm") ?>">
+                                Edit "Board and Management" Page
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="<?= route_to("dashboard.about.cg") ?>">
+                                Edit "Corporate Governance" Page
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="<?= route_to("dashboard.about.oc") ?>">
+                                Edit "Our Code" Page
+                            </a>
+                        </li>
+                    </ul>
                 </li>
 
                 <li class="nav-item">
@@ -63,10 +86,23 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= route_to("dashboard.contact-us.index") ?>">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
                         <?= call("MENU_CONTACTUS", "Contact Us") ?>
                     </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li>
+                            <a class="dropdown-item" href="<?= route_to("dashboard.contact-us.index") ?>">
+                                Edit "Contact Us" Page
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="<?= route_to("dashboard.contact-us.post") ?>">
+                                Edit "After Submit" Page
+                            </a>
+                        </li>
+                    </ul>
                 </li>
 
                 <li class="nav-item">

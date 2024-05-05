@@ -60,11 +60,12 @@ if (!function_exists('summon_editable')) {
 }
 
 if (!function_exists('summon_editable_ckeditor')) {
-    function summon_editable_ckeditor(string $label, string $id): string
+    function summon_editable_ckeditor(string $label, string $id, int $min_height = 150): string
     {
         return view("_components/CKEDITOR", [
             "field_id" => $id,
             "field_label" => $label,
+            "min_height" => $min_height,
         ]);
     }
 }

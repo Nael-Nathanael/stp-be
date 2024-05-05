@@ -40,7 +40,6 @@
         </div>
     </section>
 
-
     <section class="my-4 container">
         <div class="my-3 bg-secondary py-5 d-flex justify-content-center align-items-center" style="min-height: 300px">
             Coming Soon: Sustainability Report Editor
@@ -134,10 +133,6 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="py-5 bg-dark d-flex justify-content-center align-items-center text-white">
-        Footer
     </section>
 </div>
 

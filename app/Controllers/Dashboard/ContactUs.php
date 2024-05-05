@@ -12,4 +12,11 @@ class ContactUs extends BaseController
         bindFlashdata($data);
         return view("_pages/dashboard/contact-us/index", $data);
     }
+
+    public function post(): string
+    {
+        $data = [];
+        bindFlashdata($data);
+        return view("_pages/dashboard/contact-us/post", $data);
+    }
 }
