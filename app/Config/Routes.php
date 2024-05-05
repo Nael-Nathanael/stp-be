@@ -47,6 +47,9 @@ $routes->group('dashboard', function ($routes) {
     $routes->get('about-us/our-code', "Dashboard\About::oc", ["as" => "dashboard.about.oc"]);
 
     $routes->get('what-we-do', "Dashboard\WhatWeDo::index", ["as" => "dashboard.what-we-do.index"]);
+    $routes->get('what-we-do/products', "Dashboard\WhatWeDo::products", ["as" => "dashboard.what-we-do.products"]);
+    $routes->get('what-we-do/locations', "Dashboard\WhatWeDo::locations", ["as" => "dashboard.what-we-do.locations"]);
+
     $routes->get('partnerships', "Dashboard\Partnerships::index", ["as" => "dashboard.partnerships.index"]);
 
     $routes->get('sustainability', "Dashboard\Sustainability::index", ["as" => "dashboard.sustainability.index"]);

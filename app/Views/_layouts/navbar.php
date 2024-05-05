@@ -56,10 +56,28 @@
                     </ul>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= route_to("dashboard.what-we-do.index") ?>">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
                         <?= call("MENU_WHATWEDO", "What We Do") ?>
                     </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li>
+                            <a class="dropdown-item" href="<?= route_to("dashboard.what-we-do.index") ?>">
+                                Edit "What We Do" Page
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="<?= route_to("dashboard.what-we-do.products") ?>">
+                                Edit "Products" Page
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="<?= route_to("dashboard.what-we-do.locations") ?>">
+                                Edit "Locations" Page
+                            </a>
+                        </li>
+                    </ul>
                 </li>
 
                 <li class="nav-item">

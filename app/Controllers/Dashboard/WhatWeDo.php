@@ -12,4 +12,18 @@ class WhatWeDo extends BaseController
         bindFlashdata($data);
         return view("_pages/dashboard/what-we-do/index", $data);
     }
+
+    public function products(): string
+    {
+        $data = [];
+        bindFlashdata($data);
+        return view("_pages/dashboard/what-we-do/products", $data);
+    }
+
+    public function locations(): string
+    {
+        $data = [];
+        bindFlashdata($data);
+        return view("_pages/dashboard/what-we-do/locations", $data);
+    }
 }
