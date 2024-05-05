@@ -80,10 +80,33 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= route_to("dashboard.media.index") ?>">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
                         <?= call("MENU_MEDIA", "Media") ?>
                     </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li>
+                            <a class="dropdown-item" href="<?= route_to("dashboard.media.index") ?>">
+                                Edit "Media" Page
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="<?= route_to("dashboard.media.gallery") ?>">
+                                Edit "Gallery" Page
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="<?= route_to("dashboard.media.news") ?>">
+                                Edit "News" Page
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="<?= route_to("dashboard.media.press") ?>">
+                                Edit "Press" Page
+                            </a>
+                        </li>
+                    </ul>
                 </li>
 
                 <li class="nav-item dropdown">

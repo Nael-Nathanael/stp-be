@@ -50,7 +50,11 @@ $routes->group('dashboard', function ($routes) {
     $routes->get('partnerships', "Dashboard\Partnerships::index", ["as" => "dashboard.partnerships.index"]);
     $routes->get('sustainability', "Dashboard\Sustainability::index", ["as" => "dashboard.sustainability.index"]);
     $routes->get('career', "Dashboard\Career::index", ["as" => "dashboard.career.index"]);
+
     $routes->get('media', "Dashboard\Media::index", ["as" => "dashboard.media.index"]);
+    $routes->get('media/gallery', "Dashboard\Media::gallery", ["as" => "dashboard.media.gallery"]);
+    $routes->get('media/press', "Dashboard\Media::press", ["as" => "dashboard.media.press"]);
+    $routes->get('media/news', "Dashboard\Media::news", ["as" => "dashboard.media.news"]);
 
     $routes->get('contact-us', "Dashboard\ContactUs::index", ["as" => "dashboard.contact-us.index"]);
     $routes->get('contact-us/submitted', "Dashboard\ContactUs::post", ["as" => "dashboard.contact-us.post"]);
