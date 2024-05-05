@@ -64,10 +64,22 @@
         </div>
     </section>
 
-    <section class="bg-light container my-4">
-        <div class="p-5 d-flex justify-content-center align-items-center">
-            Coming Soon: Our Code Document Editor
-        </div>
+    <section class="container my-4">
+        <?= view(
+            "_components/UseDoc",
+            [
+                "segment" => "OUR_CODE",
+                "label" => "Our Code",
+                "meta" => [
+                    "NO_LEFT",
+                ],
+                "fields" => [
+                    "TAG",
+                    "TITLE",
+                    "DESCRIPTION",
+                ]
+            ]
+        ) ?>
     </section>
 
     <section class="container my-4">
@@ -78,3 +90,6 @@
 
 <?= $this->endSection(); ?>
 
+<?= $this->section("javascript") ?>
+<?= view("_components/UseDoc_js", ["segment" => "OUR_CODE"]) ?>
+<?= $this->endSection(); ?>

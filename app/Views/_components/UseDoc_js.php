@@ -1,6 +1,7 @@
 <?php
 /**
  * @var string $segment
+ * @var string[] $fields
  */
 ?>
 
@@ -21,6 +22,7 @@
                     responseFull = [...responseFull]
 
                     let tableEl = document.getElementById("<?=$segment?>tableBody");
+                    tableEl.innerHTML = ""
 
                     for (const response of responseFull) {
                         tableEl.innerHTML += `
@@ -30,12 +32,22 @@
                                         Delete
                                     </button>
                                 </td>
-                                <td>${response.description}</td>
-                                <td class="text-center">
-                                    <a href="${response.url}" target="_blank" rel="noreferrer" class="btn btn-success btn-sm" type="button">
-                                        Download
-                                    </a>
-                                </td>
+                                <?php if (in_array("TAG", $fields)): ?>
+                                    <td>${response.tag}</td>
+                                <?php endif ?>
+                                <?php if (in_array("TITLE", $fields)): ?>
+                                    <td>${response.title}</td>
+                                <?php endif ?>
+                                <?php if (in_array("DESCRIPTION", $fields)): ?>
+                                    <td>${response.description}</td>
+                                <?php endif ?>
+                                <?php if (in_array("URL", $fields)): ?>
+                                    <td class="text-center">
+                                        <a href="${response.url}" target="_blank" rel="noreferrer" class="btn btn-success btn-sm" type="button">
+                                            Download
+                                        </a>
+                                    </td>
+                                <?php endif ?>
                             </tr>
                         `
                     }
@@ -71,16 +83,35 @@
                             Delete
                         </button>
                     </td>
-                    <td>${response.description}</td>
-                    <td class="text-center">
-                        <a href="${response.url}" target="_blank" rel="noreferrer" class="btn btn-success btn-sm" type="button">
-                            Download
-                        </a>
-                    </td>
+                    <?php if (in_array("TAG", $fields)): ?>
+                        <td>${response.tag}</td>
+                    <?php endif ?>
+                    <?php if (in_array("TITLE", $fields)): ?>
+                        <td>${response.title}</td>
+                    <?php endif ?>
+                    <?php if (in_array("DESCRIPTION", $fields)): ?>
+                        <td>${response.description}</td>
+                    <?php endif ?>
+                    <?php if (in_array("URL", $fields)): ?>
+                        <td class="text-center">
+                            <a href="${response.url}" target="_blank" rel="noreferrer" class="btn btn-success btn-sm" type="button">
+                                Download
+                            </a>
+                        </td>
+                    <?php endif ?>
                 </tr>
             `
-                document.querySelector("input#description[data-segment='<?=$segment?>']").value = ""
-                document.querySelector("input#url[data-segment='<?=$segment?>']").value = ""
+
+                const inputs = document.querySelectorAll("input[data-segment='<?=$segment?>']")
+                for (const input of inputs) {
+                    input.value = ""
+                }
+
+                const textareas = document.querySelectorAll("textarea[data-segment='<?=$segment?>']")
+                for (const textarea of textareas) {
+                    textarea.value = ""
+                }
+
                 <?=$segment?>closeCreateForm()
 
                 Swal.fire("Success!", "Document registered successfully", "success")

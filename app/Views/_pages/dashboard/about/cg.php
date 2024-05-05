@@ -65,15 +65,45 @@
     </section>
 
     <section class="container my-4">
-        <?= view("_components/UseDoc", ["segment" => "BOARD_COMMITTEES", "label" => "Board Committees"]) ?>
+        <?= view(
+            "_components/UseDoc",
+            [
+                "segment" => "BOARD_COMMITTEES",
+                "label" => "Board Committees",
+                "fields" => [
+                    "DESCRIPTION",
+                    "URL",
+                ]
+            ]
+        ) ?>
     </section>
 
     <section class="container my-4">
-        <?= view("_components/UseDoc", ["segment" => "GOVERNANCE", "label" => "Governance"]) ?>
+        <?= view(
+            "_components/UseDoc",
+            [
+                "segment" => "GOVERNANCE",
+                "label" => "Governance",
+                "fields" => [
+                    "DESCRIPTION",
+                    "URL",
+                ]
+            ]
+        ) ?>
     </section>
 
     <section class="container my-4">
-        <?= view("_components/UseDoc", ["segment" => "REQUIREMENT_STANDARDS", "label" => "Requirement Standards"]) ?>
+        <?= view(
+            "_components/UseDoc",
+            [
+                "segment" => "REQUIREMENT_STANDARDS",
+                "label" => "Requirement Standards",
+                "fields" => [
+                    "DESCRIPTION",
+                    "URL",
+                ]
+            ]
+        ) ?>
     </section>
 </div>
 
@@ -81,7 +111,34 @@
 <?= $this->endSection(); ?>
 
 <?= $this->section("javascript") ?>
-<?= view("_components/UseDoc_js", ["segment" => "BOARD_COMMITTEES"]) ?>
-<?= view("_components/UseDoc_js", ["segment" => "GOVERNANCE"]) ?>
-<?= view("_components/UseDoc_js", ["segment" => "REQUIREMENT_STANDARDS"]) ?>
+<?= view(
+    "_components/UseDoc_js",
+    [
+        "segment" => "BOARD_COMMITTEES",
+        "fields" => [
+            "DESCRIPTION",
+            "URL",
+        ]
+    ]
+) ?>
+<?= view(
+    "_components/UseDoc_js",
+    [
+        "segment" => "GOVERNANCE",
+        "fields" => [
+            "DESCRIPTION",
+            "URL",
+        ]
+    ]
+) ?>
+<?= view(
+    "_components/UseDoc_js",
+    [
+        "segment" => "REQUIREMENT_STANDARDS",
+        "fields" => [
+            "DESCRIPTION",
+            "URL",
+        ]
+    ]
+) ?>
 <?= $this->endSection(); ?>
