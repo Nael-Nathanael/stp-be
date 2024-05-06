@@ -64,6 +64,8 @@ $routes->group('dashboard', function ($routes) {
 
     $routes->get('contact-us', "Dashboard\ContactUs::index", ["as" => "dashboard.contact-us.index"]);
     $routes->get('contact-us/submitted', "Dashboard\ContactUs::post", ["as" => "dashboard.contact-us.post"]);
+
+    $routes->get('settings', "Dashboard\Settings::index", ["as" => "dashboard.settings.index"]);
 });
 
 $routes->group("object", function ($routes) {

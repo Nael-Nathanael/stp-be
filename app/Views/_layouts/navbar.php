@@ -118,7 +118,6 @@
                     </ul>
                 </li>
 
-
                 <li class="nav-item">
                     <a class="nav-link" href="<?= route_to("dashboard.career.index") ?>">
                         <?= call("MENU_CAREER", "Career") ?>
@@ -171,6 +170,12 @@
                             </a>
                         </li>
                     </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= route_to("dashboard.settings.index") ?>">
+                        Settings
+                    </a>
                 </li>
 
                 <li class="nav-item">

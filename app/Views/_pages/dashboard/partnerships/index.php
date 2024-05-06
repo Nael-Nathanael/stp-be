@@ -30,11 +30,11 @@
                 <div class="bg-warning pt-1" style="max-width: 100px"></div>
 
                 <div class="h3 fw-semibold">
-                    <?= summon_editable("Partnerships Header Title", "PARTNERSHIPS_HEADER_TITLE", true) ?>
+                    <?= summon_editable_ckeditor("Partnerships Header Title", "PARTNERSHIPS_HEADER_TITLE",) ?>
                 </div>
 
                 <div class="fw-semibold">
-                    <?= summon_editable("Partnerships Header Content", "PARTNERSHIPS_HEADER_CONTENT", true) ?>
+                    <?= summon_editable_ckeditor("Partnerships Header Content", "PARTNERSHIPS_HEADER_CONTENT",) ?>
                 </div>
             </div>
         </div>

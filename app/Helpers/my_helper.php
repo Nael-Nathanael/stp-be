@@ -49,12 +49,12 @@ if (!function_exists('labelLang')) {
 }
 
 if (!function_exists('summon_editable')) {
-    function summon_editable(string $label, string $id, bool $isMultiple = false): string
+    function summon_editable(string $label, string $id, bool $showLabel = false): string
     {
         return view("_components/Editable", [
             "field_id" => $id,
             "field_label" => $label,
-            "field_multiple" => $isMultiple,
+            "show_label" => $showLabel,
         ]);
     }
 }
@@ -71,13 +71,14 @@ if (!function_exists('summon_editable_ckeditor')) {
 }
 
 if (!function_exists('summon_image_field')) {
-    function summon_image_field(string $field_id, array $ratio = [16, 9], array $res = [1280, 720]): string
+    function summon_image_field(string $field_id, array $ratio = [16, 9], array $res = [1280, 720], string $fit = 'cover'): string
     {
         return view("_components/LinesImageClickToChangeField",
             [
                 "field_id" => $field_id,
                 "ratio" => $ratio,
-                "res" => $res
+                "res" => $res,
+                "fit" => $fit
             ]
         );
     }
