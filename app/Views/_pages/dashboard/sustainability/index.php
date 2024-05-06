@@ -41,9 +41,17 @@
     </section>
 
     <section class="my-4 container">
-        <div class="my-3 bg-secondary py-5 d-flex justify-content-center align-items-center" style="min-height: 300px">
-            Coming Soon: Sustainability Report Editor
-        </div>
+        <?= view(
+            "_components/UseDoc",
+            [
+                "segment" => "SUST_REPORT",
+                "label" => "Sustainability Report",
+                "fields" => [
+                    "URL",
+                    "DESCRIPTION",
+                ]
+            ]
+        ) ?>
     </section>
 
     <section class="mt-4">
@@ -137,5 +145,19 @@
 </div>
 
 
+<?= $this->endSection(); ?>
+<?= $this->section("javascript"); ?>
+
+<?= view(
+    "_components/UseDoc_js",
+    [
+        "segment" => "SUST_REPORT",
+        "label" => "Sustainability Report",
+        "fields" => [
+            "URL",
+            "DESCRIPTION",
+        ]
+    ]
+) ?>
 <?= $this->endSection(); ?>
 

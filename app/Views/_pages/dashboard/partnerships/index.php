@@ -42,9 +42,17 @@
 
 
     <section class="my-4 container">
-        <div class="my-3 bg-secondary py-5 d-flex justify-content-center align-items-center" style="min-height: 300px">
-            Coming Soon: Financial Statement Editor
-        </div>
+        <?= view(
+            "_components/UseDoc",
+            [
+                "segment" => "FIN_ST",
+                "label" => "Financial Statement",
+                "fields" => [
+                    "URL",
+                    "DESCRIPTION",
+                ]
+            ]
+        ) ?>
     </section>
 
     <section class="my-4 container">
@@ -117,5 +125,16 @@
     ]
 ) ?>
 
+<?= view(
+    "_components/UseDoc_js",
+    [
+        "segment" => "FIN_ST",
+        "label" => "Financial Statement",
+        "fields" => [
+            "URL",
+            "DESCRIPTION",
+        ]
+    ]
+) ?>
 <?= $this->endSection(); ?>
 

@@ -80,9 +80,18 @@
 
 
     <section class="my-4 container">
-        <div class="my-3 bg-secondary py-5 d-flex justify-content-center align-items-center" style="min-height: 300px">
-            Coming Soon: Presentations Editor
-        </div>
+        <?= view(
+            "_components/UseDoc",
+            [
+                "segment" => "PRESENTATIONS",
+                "label" => "Presentation",
+                "fields" => [
+                    "TAG",
+                    "URL",
+                    "DESCRIPTION",
+                ]
+            ]
+        ) ?>
     </section>
 
     <section class="mt-4">
@@ -119,3 +128,20 @@
 
 <?= $this->endSection(); ?>
 
+
+<?= $this->section("javascript"); ?>
+
+<?= view(
+    "_components/UseDoc_js",
+    [
+        "segment" => "PRESENTATIONS",
+        "label" => "Presentation",
+        "fields" => [
+            "TAG",
+            "URL",
+            "DESCRIPTION",
+        ]
+    ]
+) ?>
+
+<?= $this->endSection(); ?>
