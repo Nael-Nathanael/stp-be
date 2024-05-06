@@ -77,13 +77,36 @@ $label = ucfirst(strtolower($segment)) . " Aspect"
         </div>
     </section>
 
-    <section class="bg-light container my-4">
-        <div class="p-5 d-flex justify-content-center align-items-center">
-            Coming Soon: <?= $label ?> Documents Editor
-        </div>
+    <section class="container my-4">
+        <?= view(
+            "_components/UseDoc",
+            [
+                "segment" => "SUST_$segment",
+                "label" => "$label Documents",
+                "fields" => [
+                    "URL",
+                    "DESCRIPTION",
+                ]
+            ]
+        ) ?>
     </section>
 </div>
 
 
+<?= $this->endSection(); ?>
+
+
+<?= $this->section("javascript"); ?>
+<?= view(
+    "_components/UseDoc_js",
+    [
+        "segment" => "SUST_$segment",
+        "label" => "$label Documents",
+        "fields" => [
+            "URL",
+            "DESCRIPTION",
+        ]
+    ]
+) ?>
 <?= $this->endSection(); ?>
 
