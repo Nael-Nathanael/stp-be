@@ -88,3 +88,16 @@ textarea:not(:placeholder-shown):not(.form-control) {
 .fw-semibold {
     font-weight: 500;
 }
+
+label:has(+ [required]) {  /* Select label with 'for' attribute and following required sibling */
+    position: relative;  /* Enable positioning for :after pseudo-element */
+}
+
+label:has(+ [required]):after {
+    content: "*required";
+    font-size: 10px;
+    color: red;
+    position: absolute;  /* Position the asterisk relative to the label */
+    left: 100%;  /* Place asterisk at the right end of the label */
+    margin-left: 2px;  /* Add a small margin between label text and asterisk */
+}

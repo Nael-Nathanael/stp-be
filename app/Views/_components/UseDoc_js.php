@@ -46,7 +46,7 @@
                     <?php if (in_array("URL", $fields)): ?>
                         <td class="text-center">
                             <a href="${response.url_ID}" target="_blank" rel="noreferrer" class="btn btn-success btn-sm" type="button">
-                                Download
+                                URL
                             </a>
                         </td>
                     <?php endif ?>
@@ -66,7 +66,7 @@
                     <?php if (in_array("URL", $fields)): ?>
                         <td class="text-center">
                             <a href="${response.url}" target="_blank" rel="noreferrer" class="btn btn-success btn-sm" type="button">
-                                Download
+                                URL
                             </a>
                         </td>
                     <?php endif ?>

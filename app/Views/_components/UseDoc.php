@@ -79,7 +79,8 @@ $langs = ["_ID" => "Bahasa Indonesia", "" => "English", "_CN" => "Chinese"]
                         <?php foreach ($langs as $lang => $langLabel): ?>
                             <div class="col-4">
                                 <div>
-                                    <label for="<?= $segment ?>description<?= $lang ?>" style="font-size: 14px">Description <span
+                                    <label for="<?= $segment ?>description<?= $lang ?>" style="font-size: 14px">Description
+                                        <span
                                                 style="font-size: 12px">in <?= $langLabel ?></span></label>
                                     <textarea type="text" required name="description<?= $lang ?>"
                                               id="<?= $segment ?>description<?= $lang ?>"
@@ -139,7 +140,7 @@ $langs = ["_ID" => "Bahasa Indonesia", "" => "English", "_CN" => "Chinese"]
             </div>
         <?php endif ?>
         <div class="col-<?= in_array("NO_LEFT", $meta) ? "12" : "8" ?>">
-            <div class="table-responsive">
+            <div class="table-responsive" style="margin-bottom: 50px">
                 <table class="table table-bordered">
                     <thead class="table-dark">
                     <tr>
@@ -155,7 +156,7 @@ $langs = ["_ID" => "Bahasa Indonesia", "" => "English", "_CN" => "Chinese"]
                             <th nowrap>Description</th>
                         <?php endif ?>
                         <?php if (in_array("URL", $fields)): ?>
-                            <th nowrap width="1">Document Link</th>
+                            <th nowrap width="1">URL</th>
                         <?php endif ?>
                     </tr>
                     </thead>

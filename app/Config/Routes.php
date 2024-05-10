@@ -56,6 +56,8 @@ $routes->group('dashboard', function ($routes) {
     $routes->get('sustainability/(:segment)', "Dashboard\Sustainability::dynamic/$1", ["as" => "dashboard.sustainability.dynamic"]);
 
     $routes->get('career', "Dashboard\Career::index", ["as" => "dashboard.career.index"]);
+    $routes->get('career/create', "Dashboard\Career::create", ["as" => "dashboard.career.create"]);
+    $routes->get('career/update/(:segment)', "Dashboard\Career::update/$1", ["as" => "dashboard.career.update"]);
 
     $routes->get('media', "Dashboard\Media::index", ["as" => "dashboard.media.index"]);
     $routes->get('media/gallery', "Dashboard\Media::gallery", ["as" => "dashboard.media.gallery"]);
@@ -105,6 +107,13 @@ $routes->group("object", function ($routes) {
         $routes->get('get', "Object\History::list", ["as" => "object.history.list"]);
         $routes->post('', "Object\History::create", ["as" => "object.history.create"]);
         $routes->get('(:segment)', "Object\History::delete/$1", ["as" => "object.history.delete"]);
+    });
+
+    $routes->group('career', function ($routes) {
+        $routes->post('create', "Object\Careers::create", ["as" => "object.career.create"]);
+        $routes->get('delete/(:segment)', "Object\Careers::delete/$1", ["as" => "object.career.delete"]);
+        $routes->post('update/(:segment)', "Object\Careers::update/$1", ["as" => "object.career.update"]);
+        $routes->get('get', "Object\Careers::get", ["as" => "object.career.get"]);
     });
 });
 

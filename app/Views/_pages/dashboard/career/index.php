@@ -71,12 +71,86 @@
     </section>
 
     <section class="my-4 container">
-        <div class="my-3 bg-secondary py-5 d-flex justify-content-center align-items-center" style="min-height: 300px">
-            Coming Soon: Career Editor
+        <div class="w-100 text-end mb-3">
+            <a class="btn btn-primary btn-sm" href="<?= route_to("dashboard.career.create") ?>">
+                <i class="bi bi-plus"></i> Add Career
+            </a>
         </div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th width="1">No.</th>
+                <th width="1">Deadline</th>
+                <th width="1">Language</th>
+                <th>Position Name</th>
+                <th>Employment Status</th>
+                <th>Excerpt</th>
+                <th width="1"></th>
+                <th width="1"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($careers as $idx => $career): ?>
+                <tr>
+                    <td rowspan="3"><?= $idx + 1 ?></td>
+                    <td rowspan="3" nowrap><?= date("Y-m-d", strtotime($career->deadline)) ?></td>
+                    <td>ID</td>
+                    <td><?= $career->position_name_ID ?></td>
+                    <td><?= $career->employment_status_ID ?></td>
+                    <td><?= $career->excerpt_ID ?></td>
+                    <td rowspan="3" style="vertical-align: middle">
+                        <a class="btn btn-outline-primary btn-sm text-nowrap w-100 text-start"
+                           href="<?= route_to("dashboard.career.update", $career->slug) ?>">
+                            <i class="bi bi-pen me-1"></i> Edit
+                        </a>
+                    </td>
+
+                    <td style="vertical-align: middle" class="text-center" rowspan="3">
+                        <button type="submit"
+                                onclick="confirmBeforeDeleteArticle(this, '<?= route_to("object.career.delete", $career->slug) ?>')"
+                                class="btn btn-outline-danger btn-sm">
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>EN</td>
+                    <td><?= $career->position_name_EN ?></td>
+                    <td><?= $career->employment_status_EN ?></td>
+                    <td><?= $career->excerpt_EN ?></td>
+                </tr>
+                <tr>
+                    <td>CN</td>
+                    <td><?= $career->position_name_CN ?></td>
+                    <td><?= $career->employment_status_CN ?></td>
+                    <td><?= $career->excerpt_CN ?></td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
     </section>
 </div>
 
 
+<?= $this->endSection(); ?>
+<?= $this->section("javascript"); ?>
+
+<script>
+    async function confirmBeforeDeleteArticle(element, url) {
+        /**
+         * @type {{isConfirmed: boolean}} result
+         */
+        const result = await Swal.fire({
+            title: 'Delete career?',
+            text: 'Deleted career cannot be restored',
+            showCancelButton: true,
+            icon: "info",
+            confirmButtonText: "Confirm",
+        })
+        if (result.isConfirmed) {
+            window.location.href = url;
+        }
+    }
+</script>
 <?= $this->endSection(); ?>
 
