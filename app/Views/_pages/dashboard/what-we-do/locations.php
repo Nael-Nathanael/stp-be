@@ -36,13 +36,44 @@
         </div>
     </section>
 
-    <section class="bg-light container my-4">
-        <div class="p-5 d-flex justify-content-center align-items-center">
-            Coming Soon: Our Location Editor
-        </div>
+    <section class="container my-4">
+        <?= view(
+            "_components/UseDoc",
+            [
+                "segment" => "OUR_LOCATIONS",
+                "label" => "Our Locations",
+                "meta" => [
+                    "NO_LEFT",
+                ],
+                "fields" => [
+                    "TAG",
+                    "TITLE",
+                    "DESCRIPTION",
+                    "URL",
+                ]
+            ]
+        ) ?>
     </section>
 </div>
 
 
+<?= $this->endSection(); ?>
+<?= $this->section("javascript"); ?>
+<?= view(
+    "_components/UseDoc_js",
+    [
+        "segment" => "OUR_LOCATIONS",
+        "label" => "Our Locations",
+        "meta" => [
+            "NO_LEFT",
+        ],
+        "fields" => [
+            "TAG",
+            "TITLE",
+            "DESCRIPTION",
+            "URL",
+        ]
+    ]
+) ?>
 <?= $this->endSection(); ?>
 
