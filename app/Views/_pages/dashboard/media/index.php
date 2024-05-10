@@ -51,13 +51,14 @@
                     <?= summon_editable("Media Announcement Tag", "MEDIA_ANN_TAG") ?>
                 </div>
 
-                <div class="bg-warning pt-1 mb-3" style="max-width: 100px"></div>
+                <div class="bg-warning pt-1 mb-2" style="max-width: 100px"></div>
+
+                <div class="h5 fw-bold mb-3">
+                    <?= summon_editable("Announcement Title", "MEDIA_ANN_TITLE") ?>
+                </div>
 
                 <?php for ($i = 1; $i <= 3; $i++): ?>
                     <div class="card card-body mb-2 shadow">
-                        <div class="h5 fw-bold mb-0">
-                            <?= summon_editable("Announcement $i Title", "MEDIA_ANN_${i}_TITLE") ?>
-                        </div>
                         <div class="text-success">
                             <?= summon_editable("Announcement $i Date", "MEDIA_ANN_${i}_DATE") ?>
                         </div>
