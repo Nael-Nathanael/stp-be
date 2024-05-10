@@ -54,7 +54,10 @@
     </section>
 
     <section class="my-4 container">
-        <?= summon_editable_ckeditor("Board Members", "BNM_BM1_CONTENT") ?>
+        <div class="small">
+            <?= summon_editable("Division", "BNM_BM1_DIVISION") ?>
+        </div>
+        <?= summon_editable_ckeditor(call("BNM_BM1_DIVISION", 'Division') . " Members", "BNM_BM1_CONTENT") ?>
     </section>
 
     <section class="my-4 container">
@@ -79,7 +82,10 @@
     </section>
 
     <section class="my-4 container">
-        <?= summon_editable_ckeditor("Management", "BNM_BM2_CONTENT") ?>
+        <div class="small">
+            <?= summon_editable("Division", "BNM_BM2_DIVISION") ?>
+        </div>
+        <?= summon_editable_ckeditor(call("BNM_BM2_DIVISION", 'Division') . " Members", "BNM_BM2_CONTENT") ?>
     </section>
 </div>
 
