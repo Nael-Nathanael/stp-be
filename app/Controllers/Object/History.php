@@ -8,62 +8,57 @@ use ReflectionException;
 
 class History extends BaseController
 {
-    public function delete($section, $id): ResponseInterface
+    public function delete($id): ResponseInterface
     {
         $docs = model("STPHistory");
 
         $docs->delete($id);
-        return $this->response->setJSON([
-            "message" => "OK"
-        ]);
-    }
 
-    public function update($section, $id): ResponseInterface
-    {
-        $docs = model("STPHistory");
-        $instance = $docs->find($id);
-        if (!$instance) {
-            return $this->response->setStatusCode(404)->setJSON([
-                "message" => "Not Found"
-            ]);
-        }
-
-        foreach ($this->request->getJSON() as $key => $value) {
-            $instance->$key = $value;
-        }
-        $instance = $instance->save();
-        return $this->response->setJSON($instance);
+        sendCalmSuccessMessage("Deleted!");
+        return redirect()->back();
     }
 
     /**
      * @throws ReflectionException
      */
-    public function create($section): ResponseInterface
+    public function create(): ResponseInterface
     {
         $docs = model("STPHistory");
 
-        $data = [];
-        foreach ($this->request->getJSON() as $key => $value) {
-            $data[$key] = $value;
+        $data = [
+            "year" => $this->request->getPost("year"),
+            "imgUrl" => PLACEHOLDER_IMG,
+            "title_EN" => $this->request->getPost("title_EN"),
+            "title_ID" => $this->request->getPost("title_ID"),
+            "title_CN" => $this->request->getPost("title_CN"),
+            "tag_EN" => $this->request->getPost("tag_EN"),
+            "tag_ID" => $this->request->getPost("tag_ID"),
+            "tag_CN" => $this->request->getPost("tag_CN"),
+            "description_EN" => $this->request->getPost("description_EN"),
+            "description_ID" => $this->request->getPost("description_ID"),
+            "description_CN" => $this->request->getPost("description_CN"),
+        ];
+
+        // upload image
+        if ($_FILES["coverUrl"]["name"]) {
+            $path = $this->request->getFile("coverUrl");
+            $path->move(UPLOAD_FOLDER_URL, null, true);
+            $data['imgUrl'] = base_url("/uploads/" . $path->getName());
         }
 
-        $data['type'] = $section;
-
         $docs->insert($data);
-        return $this->response->setJSON($docs->getWhere($data)->getLastRow());
+
+        sendCalmSuccessMessage("Saved!");
+        return redirect()->back();
     }
 
-    public function list($section): ResponseInterface
+    public function list(): ResponseInterface
     {
-//        $limit = array_key_exists("limit", $_GET) && intval($_GET['limit']) ? intval($_GET['limit']) : 10;
-//        $page = array_key_exists("page", $_GET) && intval($_GET['page']) ? intval($_GET['page']) : 1;
-
         $docs = model("STPHistory");
         return $this->response->setJSON(
-            $docs->where("type", $section)
-                ->orderBy("createdAt", "DESC")
+            $docs
+                ->orderBy("year", "DESC")
                 ->findAll()
-//                ->findAll($limit, ($page - 1) * $limit)
         );
     }
 }

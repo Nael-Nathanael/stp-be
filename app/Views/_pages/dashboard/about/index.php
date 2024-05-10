@@ -74,9 +74,160 @@
         </div>
     </section>
 
-    <section class="bg-light container my-4">
-        <div class="p-5 d-flex justify-content-center align-items-center">
-            Coming Soon: History Editor
+    <section class="my-5 container">
+        <div class="position-relative">
+            <div class="card card-body shadow-sm px-2 py-1 mb-2 position-absolute top-0 start-50 translate-middle"
+                 style="z-index: 1001; width: fit-content">
+                <h1 class="card-title fs-5">
+                    Section Editor: History
+                </h1>
+            </div>
+            <hr class="bg-primary">
+        </div>
+
+        <div class="py-3">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th width="1">Year</th>
+                    <th width="1">Image</th>
+                    <th width="1">Language</th>
+                    <th>Tag</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th width="1"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php foreach ($histories as $history): ?>
+                    <tr>
+                        <td rowspan="3"><?= $history->year ?></td>
+                        <td rowspan="3">
+                            <img src="<?= $history->imgUrl ?>" alt="<?= $history->year ?>" width="200"/>
+                        </td>
+                        <td>ID</td>
+                        <td><?= $history->tag_ID ?></td>
+                        <td><?= $history->title_ID ?></td>
+                        <td><?= $history->description_ID ?></td>
+                        <td rowspan="3" style="vertical-align: middle">
+                            <button type="submit"
+                                    onclick="confirmBeforeDeleteHistory('<?= route_to("object.history.delete", $history->year) ?>')"
+                                    class="btn btn-outline-danger btn-sm">
+                                Delete
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>EN</td>
+                        <td><?= $history->tag_EN ?></td>
+                        <td><?= $history->title_EN ?></td>
+                        <td><?= $history->description_EN ?></td>
+                    </tr>
+                    <tr>
+                        <td>CN</td>
+                        <td><?= $history->tag_CN ?></td>
+                        <td><?= $history->title_CN ?></td>
+                        <td><?= $history->description_CN ?></td>
+                    </tr>
+                <?php endforeach; ?>
+                </tbody>
+            </table>
+
+            <div class="w-100 text-end">
+                <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="modal"
+                        data-bs-target="#addHistoryModal">
+                    <i class="bi bi-plus-lg me-2"></i> Add History
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="addHistoryModal" tabindex="-1" aria-labelledby="addHistoryModalLabel"
+                     aria-hidden="true">
+                    <form class="modal-dialog modal-dialog-centered modal-xl" method="post"
+                          action="<?= route_to("object.history.create") ?>" enctype="multipart/form-data">
+                        <div class="modal-content">
+                            <div class="modal-header border-0">
+                                <h1 class="modal-title fs-5" id="addHistoryModalLabel">Add History</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body row text-start gy-3">
+                                <div class="col-9">
+                                    <div class="form-group">
+                                        <label for="year">
+                                            Year
+                                        </label>
+                                        <input type="number"
+                                               value="<?= date('y') ?>"
+                                               required name="year"
+                                               id="year"
+                                               class="form-control form-control-sm"
+                                        >
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="form-group">
+                                        <label for="coverUrl">
+                                            Cover Image
+                                        </label>
+                                        <input type="file"
+                                               required
+                                               name="coverUrl"
+                                               id="coverUrl"
+                                               class="form-control form-control-sm"
+                                        >
+                                    </div>
+                                </div>
+                                <?php foreach (["ID", "EN", "CN"] as $lang): ?>
+                                    <div class="col-4">
+                                        <div class="form-group">
+                                            <label for="tag<?= $lang ?>" style="font-size: 14px">
+                                                Tag <span style="font-size: 12px">in <?= $lang ?></span>
+                                            </label>
+                                            <input type="text" required name="tag_<?= $lang ?>"
+                                                   id="tag<?= $lang ?>"
+                                                   class="form-control form-control-sm"
+                                            >
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="title<?= $lang ?>" style="font-size: 14px">
+                                                Title <span style="font-size: 12px">in <?= $lang ?></span>
+                                            </label>
+                                            <input type="text" required name="title_<?= $lang ?>"
+                                                   id="title<?= $lang ?>"
+                                                   class="form-control form-control-sm"
+                                            >
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="description<?= $lang ?>" style="font-size: 14px">
+                                                Description <span style="font-size: 12px">in <?= $lang ?></span>
+                                            </label>
+                                            <textarea required name="description_<?= $lang ?>"
+                                                      id="description<?= $lang ?>"
+                                                      rows="5"
+                                                      class="form-control form-control-sm"
+                                            ></textarea>
+                                        </div>
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+                            <div class="modal-footer border-0">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Save</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="position-relative">
+            <div class="card card-body shadow-sm px-2 py-1 mb-2 position-absolute top-0 start-50 translate-middle"
+                 style="z-index: 1001; width: fit-content">
+                <h1 class="card-title fs-5">
+                    Section Editor: History
+                </h1>
+            </div>
+            <hr class="bg-primary">
         </div>
     </section>
 
@@ -213,5 +364,25 @@
 </div>
 
 
+<?= $this->endSection(); ?>
+<?= $this->section("javascript"); ?>
+
+<script>
+    async function confirmBeforeDeleteHistory(url) {
+        /**
+         * @type {{isConfirmed: boolean}} result
+         */
+        const result = await Swal.fire({
+            title: 'Delete history?',
+            text: 'Deleted history cannot be restored',
+            showCancelButton: true,
+            icon: "warning",
+            confirmButtonText: "Confirm",
+        })
+        if (result.isConfirmed) {
+            window.location.href = url;
+        }
+    }
+</script>
 <?= $this->endSection(); ?>
 

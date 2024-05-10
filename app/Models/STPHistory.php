@@ -6,14 +6,12 @@ use CodeIgniter\Model;
 
 class STPHistory extends Model
 {
-    protected $table = 'documents';
-    protected $primaryKey = 'id';
-    protected $useAutoIncrement = true;
+    protected $table = 'history';
+    protected $primaryKey = 'year';
+    protected $useAutoIncrement = false;
     protected $returnType = 'object';
     protected $useSoftDeletes = false;
     protected $allowedFields = [
-        'id',
-        'type',
         'year',
         'imgUrl',
         'tag_EN',

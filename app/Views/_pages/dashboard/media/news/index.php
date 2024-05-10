@@ -134,8 +134,6 @@
 
 <?= $this->section("javascript") ?>
 <script>
-    // new DataTable('#article_table');
-
     async function confirmBeforeDeleteArticle(element, url) {
         /**
          * @type {{isConfirmed: boolean}} result

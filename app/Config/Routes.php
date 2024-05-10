@@ -102,10 +102,9 @@ $routes->group("object", function ($routes) {
     });
 
     $routes->group('history', function ($routes) {
-        $routes->delete('(:segment)', "Object\History::delete/$1", ["as" => "object.history.delete"]);
-        $routes->patch('(:segment)', "Object\History::update/$1", ["as" => "object.history.update"]);
+        $routes->get('get', "Object\History::list", ["as" => "object.history.list"]);
         $routes->post('', "Object\History::create", ["as" => "object.history.create"]);
-        $routes->get('', "Object\History::list", ["as" => "object.history.list"]);
+        $routes->get('(:segment)', "Object\History::delete/$1", ["as" => "object.history.delete"]);
     });
 });
 

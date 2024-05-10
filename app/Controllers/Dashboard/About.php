@@ -8,7 +8,10 @@ class About extends BaseController
 {
     public function index(): string
     {
-        $data = [];
+        $histories = model("STPHistory");
+        $data = [
+            "histories" => $histories->orderBy("year DESC")->findAll()
+        ];
         bindFlashdata($data);
         return view("_pages/dashboard/about/index", $data);
     }
