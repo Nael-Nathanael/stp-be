@@ -19,9 +19,48 @@
 </div>
 
 <div>
-    <section class="my-4 container">
-        <div class="my-3 bg-secondary py-5 d-flex justify-content-center align-items-center" style="min-height: 300px">
-            Coming Soon: Gallery Announcement Editor
+    <section class="my-5 container">
+        <div class="position-relative">
+            <div class="card card-body shadow-sm px-2 py-1 mb-2 position-absolute top-0 start-50 translate-middle"
+                 style="z-index: 1001; width: fit-content">
+                <h1 class="card-title fs-5">
+                    Section Editor: Gallery Announcement
+                </h1>
+            </div>
+            <hr class="bg-primary">
+        </div>
+
+        <div class="py-3">
+            <div class="small fw-semibold">
+                <?= summon_editable("Gallery Announcement Tag", "GALLERY_ANN_TAG") ?>
+            </div>
+
+            <div class="bg-warning pt-1 mb-2" style="max-width: 100px"></div>
+
+            <div class="h5 fw-bold mb-3">
+                <?= summon_editable("Announcement Title", "GALLERY_ANN_TITLE") ?>
+            </div>
+
+            <?php for ($i = 1; $i <= 3; $i++): ?>
+                <div class="card card-body mb-2 shadow">
+                    <div class="text-success">
+                        <?= summon_editable("Announcement $i Date", "GALLERY_ANN_${i}_DATE") ?>
+                    </div>
+                    <div>
+                        <?= summon_editable_ckeditor("Announcement $i Content", "GALLERY_ANN_${i}_CONTENT") ?>
+                    </div>
+                </div>
+            <?php endfor; ?>
+        </div>
+
+        <div class="position-relative">
+            <div class="card card-body shadow-sm px-2 py-1 mb-2 position-absolute top-0 start-50 translate-middle"
+                 style="z-index: 1001; width: fit-content">
+                <h1 class="card-title fs-5">
+                    Section Editor: Gallery Announcement
+                </h1>
+            </div>
+            <hr class="bg-primary">
         </div>
     </section>
 
