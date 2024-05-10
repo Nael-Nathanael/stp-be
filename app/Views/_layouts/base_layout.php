@@ -325,6 +325,13 @@
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
     const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 </script>
+
+<script>
+    function stopScroll(event) {
+        event.preventDefault();
+        event.stopPropagation();
+    }
+</script>
 <?= $this->renderSection("javascript") ?>
 
 <?php if (isset($flashdata['success'])): ?>

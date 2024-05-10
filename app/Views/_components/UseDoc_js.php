@@ -6,27 +6,27 @@
 ?>
 
 <script>
-    async function <?=$segment?>onOpen() {
-        fetch("<?= route_to("object.documents.list", $segment)?>")
-            .then(async (response) => {
-                return await response.json()
-            })
-            .then(
-                (responseFull) => {
-                    /**
-                     * @type {{
-                     *     description: string,
-                     *     url: string
-                     * }[]} responseFull
-                     */
-                    responseFull = [...responseFull]
+    window.addEventListener('load', () => {
+            fetch("<?= route_to("object.documents.list", $segment)?>")
+                .then(async (response) => {
+                    return await response.json()
+                })
+                .then(
+                    (responseFull) => {
+                        /**
+                         * @type {{
+                         *     description: string,
+                         *     url: string
+                         * }[]} responseFull
+                         */
+                        responseFull = [...responseFull]
 
-                    let tableEl = document.getElementById("<?=$segment?>tableBody");
-                    tableEl.innerHTML = ""
+                        let tableEl = document.getElementById("<?=$segment?>tableBody");
+                        tableEl.innerHTML = ""
 
-                    for (const idx in responseFull) {
-                        const response = responseFull[idx]
-                        tableEl.innerHTML += `
+                        for (const idx in responseFull) {
+                            const response = responseFull[idx]
+                            tableEl.innerHTML += `
                 <tr data-id='tr-${response.id}' class="${idx % 2 !== 0 ? 'table-secondary' : ''}">
                     <td rowspan="3" style='vertical-align: middle'>
                         <button type="button" class="btn btn-danger btn-sm" onclick="<?=$segment?>confirmDelete('${response.id}')">
@@ -92,9 +92,10 @@
                     <?php endif ?>
                 </tr>
                         `
-                    }
-                })
-    }
+                        }
+                    })
+        }
+    )
 
     function <?=$segment?>onSubmit(event) {
         event.preventDefault()
@@ -213,10 +214,14 @@
     }
 
     function <?=$segment?>openCreateForm() {
-        document.getElementById("<?=$segment?>createForm").classList.remove("d-none")
+        document.querySelector("body").classList.add("overflow-hidden")
+        document.getElementById("<?=$segment?>createFormContainer").classList.remove("d-none")
+        const bbox = document.getElementById("<?=$segment?>createFormContainer").getBoundingClientRect()
+        window.scrollBy(0, bbox.top - window.screen.height + bbox.height)
     }
 
     function <?=$segment?>closeCreateForm() {
-        document.getElementById("<?=$segment?>createForm").classList.add("d-none")
+        document.querySelector("body").classList.remove("overflow-hidden")
+        document.getElementById("<?=$segment?>createFormContainer").classList.add("d-none")
     }
 </script>
