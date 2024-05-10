@@ -49,8 +49,28 @@ class Media extends BaseController
 
     public function press(): string
     {
+        $articleModel = model("STPArticles");
+        $data = [
+            "articles" => $articleModel->where("type", "PRESS-RELEASE")->orderBy("updated_at", "DESC")->orderBy("created_at", "DESC")->findAll()
+        ];
+        bindFlashdata($data);
+        return view("_pages/dashboard/media/press/index", $data);
+    }
+
+    public function press_create(): string
+    {
         $data = [];
         bindFlashdata($data);
-        return view("_pages/dashboard/media/press", $data);
+        return view("_pages/dashboard/media/press/create", $data);
+    }
+
+    public function press_update($slug): string
+    {
+        $articleModel = model("STPArticles");
+        $data = [
+            "article" => $articleModel->find($slug)
+        ];
+        bindFlashdata($data);
+        return view("_pages/dashboard/media/press/update", $data);
     }
 }

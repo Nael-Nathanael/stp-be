@@ -59,7 +59,11 @@ $routes->group('dashboard', function ($routes) {
 
     $routes->get('media', "Dashboard\Media::index", ["as" => "dashboard.media.index"]);
     $routes->get('media/gallery', "Dashboard\Media::gallery", ["as" => "dashboard.media.gallery"]);
+
     $routes->get('media/press', "Dashboard\Media::press", ["as" => "dashboard.media.press"]);
+    $routes->get('media/press/create', "Dashboard\Media::press_create", ["as" => "dashboard.media.press.create"]);
+    $routes->get('media/press/update/(:segment)', "Dashboard\Media::press_update/$1", ["as" => "dashboard.media.press.update"]);
+
     $routes->get('media/news', "Dashboard\Media::news", ["as" => "dashboard.media.news"]);
     $routes->get('media/news/create', "Dashboard\Media::news_create", ["as" => "dashboard.media.news.create"]);
     $routes->get('media/news/update/(:segment)', "Dashboard\Media::news_update/$1", ["as" => "dashboard.media.news.update"]);
