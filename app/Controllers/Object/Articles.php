@@ -57,12 +57,16 @@ class Articles extends BaseController
             ]
         );
 
-        sendCalmSuccessMessage("New Article Published!");
         switch (strtoupper($type)) {
             case "NEWS":
+                sendCalmSuccessMessage("News Published!");
                 return redirect()->to(route_to("dashboard.media.news"));
             case "PRESS-RELEASE":
+                sendCalmSuccessMessage("Press Release Published!");
                 return redirect()->to(route_to("dashboard.media.press"));
+            case "PRODUCTS":
+                sendCalmSuccessMessage("Product Published!");
+                return redirect()->to(route_to("dashboard.what-we-do.products"));
         }
         return redirect()->back();
     }
@@ -106,12 +110,16 @@ class Articles extends BaseController
 
         $articles->save($data);
 
-        sendCalmSuccessMessage("Article has been updated!");
         switch (strtoupper($instance->type)) {
             case "NEWS":
+                sendCalmSuccessMessage("News Updated!");
                 return redirect()->to(route_to("dashboard.media.news"));
             case "PRESS-RELEASE":
+                sendCalmSuccessMessage("Press Release Updated!");
                 return redirect()->to(route_to("dashboard.media.press"));
+            case "PRODUCTS":
+                sendCalmSuccessMessage("Product Updated!");
+                return redirect()->to(route_to("dashboard.what-we-do.products"));
         }
         return redirect()->back();
     }
