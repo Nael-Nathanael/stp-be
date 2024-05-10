@@ -54,9 +54,7 @@
     </section>
 
     <section class="my-4 container">
-        <div class="my-3 bg-secondary py-5 d-flex justify-content-center align-items-center" style="min-height: 300px">
-            Coming Soon: Board Member 1 Editor
-        </div>
+        <?= summon_editable_ckeditor("Board Members", "BNM_BM1_CONTENT") ?>
     </section>
 
     <section class="my-4 container">
@@ -81,9 +79,7 @@
     </section>
 
     <section class="my-4 container">
-        <div class="my-3 bg-secondary py-5 d-flex justify-content-center align-items-center" style="min-height: 300px">
-            Coming Soon: Management Editor
-        </div>
+        <?= summon_editable_ckeditor("Management", "BNM_BM2_CONTENT") ?>
     </section>
 </div>
 
