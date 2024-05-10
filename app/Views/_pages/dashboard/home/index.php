@@ -157,9 +157,9 @@
             <?= summon_editable("Latest News", "HOME_NEWS_TITLE") ?>
         </div>
 
-        <div class="my-3 bg-secondary py-5 d-flex justify-content-center align-items-center">
-            Coming Soon: News Editor
-        </div>
+        <a href="<?= route_to("dashboard.media.news") ?>" class="my-3 btn btn-primary w-100">
+            Manage News
+        </a>
     </section>
 
     <section class="my-4 position-relative"
