@@ -58,12 +58,19 @@ class Articles extends BaseController
         );
 
         sendCalmSuccessMessage("New Article Published!");
-        return redirect()->to(route_to("dashboard.media.news"));
+        switch (strtoupper($type)) {
+            case "NEWS":
+                return redirect()->to(route_to("dashboard.media.news"));
+            case "PRESS-RELEASE":
+                return redirect()->to(route_to("dashboard.media.press"));
+        }
+        return redirect()->back();
     }
 
     public function update($slug): RedirectResponse
     {
         $articles = model("STPArticles");
+        $instance = $articles->find($slug);
 
         $data = [
             "slug" => $slug,
@@ -100,7 +107,13 @@ class Articles extends BaseController
         $articles->save($data);
 
         sendCalmSuccessMessage("Article has been updated!");
-        return redirect()->to(route_to("dashboard.media.news"));
+        switch (strtoupper($instance->type)) {
+            case "NEWS":
+                return redirect()->to(route_to("dashboard.media.news"));
+            case "PRESS-RELEASE":
+                return redirect()->to(route_to("dashboard.media.press"));
+        }
+        return redirect()->back();
     }
 
 
