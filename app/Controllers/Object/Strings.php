@@ -47,8 +47,13 @@ class Strings extends BaseController
          */
         $result = [];
 
+        /**
+         * @type string[] $queryResult
+         */
+        $queryResult = $strings->getDictByKeyArray($post);
+
         foreach ($post as $key) {
-            $result[$key] = $strings->getOrCreateByKey($key, true);
+            $result[$key] = array_key_exists($key, $queryResult) ? $queryResult[$key] : "";
         }
 
         return $this->response->setJSON($result);

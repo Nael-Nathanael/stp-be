@@ -32,4 +32,15 @@ class STPStrings extends Model
 
         return $this->getOrCreateByKey($key);
     }
+
+    function getDictByKeyArray($keyArray): array
+    {
+        $sqlResult = $this->whereIn("key", $keyArray)->findAll();
+        $dict = [];
+        foreach ($sqlResult as $item) {
+            $dict[$item->key] = $item;
+        }
+
+        return $dict;
+    }
 }

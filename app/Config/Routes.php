@@ -61,6 +61,8 @@ $routes->group('dashboard', function ($routes) {
     $routes->get('media/gallery', "Dashboard\Media::gallery", ["as" => "dashboard.media.gallery"]);
     $routes->get('media/press', "Dashboard\Media::press", ["as" => "dashboard.media.press"]);
     $routes->get('media/news', "Dashboard\Media::news", ["as" => "dashboard.media.news"]);
+    $routes->get('media/news/create', "Dashboard\Media::news_create", ["as" => "dashboard.media.news.create"]);
+    $routes->get('media/news/update/(:segment)', "Dashboard\Media::news_update/$1", ["as" => "dashboard.media.news.update"]);
 
     $routes->get('contact-us', "Dashboard\ContactUs::index", ["as" => "dashboard.contact-us.index"]);
     $routes->get('contact-us/submitted', "Dashboard\ContactUs::post", ["as" => "dashboard.contact-us.post"]);
@@ -85,6 +87,14 @@ $routes->group("object", function ($routes) {
         $routes->patch('(:segment)/(:segment)', "Object\Documents::update/$1/$2", ["as" => "object.documents.update"]);
         $routes->post('(:segment)', "Object\Documents::create/$1", ["as" => "object.documents.create"]);
         $routes->get('(:segment)', "Object\Documents::list/$1", ["as" => "object.documents.list"]);
+    });
+
+    $routes->group('articles', function ($routes) {
+        $routes->post('create/(:segment)', "Object\Articles::create/$1", ["as" => "object.articles.create"]);
+        $routes->get('delete/(:segment)', "Object\Articles::delete/$1", ["as" => "object.articles.delete"]);
+        $routes->post('update/(:segment)', "Object\Articles::update/$1", ["as" => "object.articles.update"]);
+        $routes->get('get/(:segment)', "Object\Articles::get/$1", ["as" => "object.articles.get"]);
+        $routes->get('get/detail/(:segment)', "Object\Articles::detail/$1", ["as" => "object.articles.getSpecific"]);
     });
 });
 

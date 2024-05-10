@@ -1,7 +1,7 @@
 <div class="w-100 mb-4 d-flex justify-content-end flex-column p-2 text-white position-relative"
      style="
-             height: 150px;
-             background: url('<?= PLACEHOLDER_IMG ?>') center;
+             height: 100px;
+             background-color: black;
              background-size: cover;
              ">
     <div class="position-absolute top-0 start-0 w-100 h-100"
