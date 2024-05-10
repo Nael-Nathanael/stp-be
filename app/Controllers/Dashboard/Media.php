@@ -24,7 +24,7 @@ class Media extends BaseController
     {
         $articleModel = model("STPArticles");
         $data = [
-            "articles" => $articleModel->where("type", "NEWS")->orderBy("updated_at", "DESC")->findAll()
+            "articles" => $articleModel->where("type", "NEWS")->orderBy("updated_at", "DESC")->orderBy("created_at", "DESC")->findAll()
         ];
         bindFlashdata($data);
         return view("_pages/dashboard/media/news/index", $data);
@@ -34,7 +34,6 @@ class Media extends BaseController
     {
         $data = [];
         bindFlashdata($data);
-//        return "Ya";
         return view("_pages/dashboard/media/news/create", $data);
     }
 

@@ -134,6 +134,68 @@ class Articles extends BaseController
     public function detail(string $slug): ResponseInterface
     {
         $articles = model("STPArticles");
-        return $this->response->setJSON($articles->find($slug));
+
+        $article = $articles->find($slug);
+        $publishDate = date("Y-m-d", strtotime($article->updated_at ?? $article->created_at));
+        $type = $article->type;
+
+        $relatedAfter = $articles
+            ->where("type", $type)
+            ->where("slug != '$slug'", null, false)
+            ->groupStart()
+            ->where("updated_at >= '$publishDate'", null, false)
+            ->orWhere("created_at >= '$publishDate'", null, false)
+            ->groupEnd()
+            ->orderBy("updated_at", "ASC")
+            ->orderBy("created_at", "ASC")
+            ->limit(1)
+            ->findAll();
+
+        if (count($relatedAfter) == 1) {
+            $instance = reset($relatedAfter);
+            $slugAfter = $instance->slug;
+
+            $relatedBefore = $articles
+                ->where("type", $type)
+                ->where("slug != '$slug'", null, false)
+                ->where("slug != '$slugAfter'", null, false)
+                ->groupStart()
+                ->where("updated_at <= '$publishDate'", null, false)
+                ->orWhere("created_at <= '$publishDate'", null, false)
+                ->groupEnd()
+                ->orderBy("updated_at", "DESC")
+                ->orderBy("created_at", "DESC")
+                ->limit(2)
+                ->findAll();
+
+            $related = [$instance];
+            foreach ($relatedBefore as $value) {
+                $related[] = $value;
+            }
+
+        } else {
+            $related = $articles
+                ->where("type", $type)
+                ->where("slug != '$slug'", null, false)
+                ->groupStart()
+                ->where("updated_at <= '$publishDate'", null, false)
+                ->orWhere("created_at <= '$publishDate'", null, false)
+                ->groupEnd()
+                ->orderBy("updated_at", "DESC")
+                ->orderBy("created_at", "DESC")
+                ->limit(3)
+                ->findAll();
+        }
+
+        $article->related = $related;
+
+        $excluded_field = ['content_ID', 'content_EN', 'content_CN'];
+        foreach ($article->related as &$related) {
+            foreach ($excluded_field as $exf) {
+                unset($related->$exf);
+            }
+        }
+
+        return $this->response->setJSON($article);
     }
 }
