@@ -32,61 +32,35 @@
         </div>
     </section>
 
-    <section class="my-4 container">
-        <div class="row">
-            <div class="col-7">
-                <div class="small">
-                    <?= summon_editable("Director 1 Tag", "BNM_DIR_1_TAG") ?>
+    <?php for ($i = 1; $i <= 6; $i++): ?>
+        <section class="my-4 container">
+            <div class="row">
+                <div class="col-7">
+                    <div class="small">
+                        <?= summon_editable("Head Section $i Tag", "BNM_DIR_${i}_TAG") ?>
+                    </div>
+
+                    <div class="h3 fw-semibold">
+                        <?= summon_editable_ckeditor("Head Section $i Name", "BNM_DIR_${i}_TITLE") ?>
+                    </div>
+
+                    <div class="fw-semibold">
+                        <?= summon_editable_ckeditor("Head Section $i Content", "BNM_DIR_${i}_CONTENT") ?>
+                    </div>
                 </div>
-
-                <div class="h3 fw-semibold">
-                    <?= summon_editable_ckeditor("Director 1 Name", "BNM_DIR_1_TITLE") ?>
-                </div>
-
-                <div class="fw-semibold">
-                    <?= summon_editable_ckeditor("Director 1 Content", "BNM_DIR_1_CONTENT") ?>
-                </div>
-            </div>
-            <div class="col-5">
-                <?= summon_image_field("BNM_DIR_1_IMG", [1, 1], [1000, 1000]) ?>
-            </div>
-        </div>
-    </section>
-
-    <section class="my-4 container">
-        <div class="small">
-            <?= summon_editable("Division", "BNM_BM1_DIVISION") ?>
-        </div>
-        <?= summon_editable_ckeditor(call("BNM_BM1_DIVISION", 'Division') . " Members", "BNM_BM1_CONTENT") ?>
-    </section>
-
-    <section class="my-4 container">
-        <div class="row">
-            <div class="col-5">
-                <?= summon_image_field("BNM_DIR_2_IMG", [1, 1], [1000, 1000]) ?>
-            </div>
-            <div class="col-7">
-                <div class="small">
-                    <?= summon_editable("Manager Tag", "BNM_DIR_2_TAG") ?>
-                </div>
-
-                <div class="h3 fw-semibold">
-                    <?= summon_editable_ckeditor("Manager Name", "BNM_DIR_2_TITLE") ?>
-                </div>
-
-                <div class="fw-semibold">
-                    <?= summon_editable_ckeditor("Manager Content", "BNM_DIR_2_CONTENT") ?>
+                <div class="col-5 <?= $i % 2 == 0 ? 'order-first' : ''?>">
+                    <?= summon_image_field("BNM_DIR_${i}_IMG", [1, 1], [1000, 1000]) ?>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="my-4 container">
-        <div class="small">
-            <?= summon_editable("Division", "BNM_BM2_DIVISION") ?>
-        </div>
-        <?= summon_editable_ckeditor(call("BNM_BM2_DIVISION", 'Division') . " Members", "BNM_BM2_CONTENT") ?>
-    </section>
+        <section class="my-4 container">
+            <div class="small">
+                <?= summon_editable("Division $i", "BNM_BM${i}_DIVISION") ?>
+            </div>
+            <?= summon_editable_ckeditor(call("BNM_BM${i}_DIVISION", 'Division') . " Members", "BNM_BM${i}_CONTENT") ?>
+        </section>
+    <?php endfor; ?>
 </div>
 
 
