@@ -39,6 +39,10 @@ $routes->get('/logout', 'Home::do_logout', ["as" => "auth.logout"]);
 $routes->group('dashboard', function ($routes) {
     $routes->get("", "Dashboard::index", ["as" => "dashboard.landing"]);
 
+    $routes->get('home/ar', "Dashboard\AnnualReports::index", ["as" => "dashboard.landing.ar"]);
+    $routes->get('home/ar/create', "Dashboard\AnnualReports::create", ["as" => "dashboard.landing.ar.create"]);
+    $routes->get('home/ar/update/(:segment)', "Dashboard\AnnualReports::update/$1", ["as" => "dashboard.landing.ar.update"]);
+
     $routes->get('landing', "Dashboard\Landing::index", ["as" => "dashboard.landing.index"]);
 
     $routes->get('about-us', "Dashboard\About::index", ["as" => "dashboard.about.index"]);

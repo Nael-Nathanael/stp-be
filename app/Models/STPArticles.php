@@ -15,6 +15,7 @@ class STPArticles extends Model
         "slug",
         "type",
         "imgUrl",
+        "attachmentUrl",
         "title_EN",
         "title_ID",
         "title_CN",

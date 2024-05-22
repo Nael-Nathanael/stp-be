@@ -55,9 +55,25 @@
         ) ?>
     </section>
 
-    <section class="my-4 container">
-        <div class="my-3 bg-secondary py-5 d-flex justify-content-center align-items-center" style="min-height: 300px">
-            Coming Soon: Annual Reports Editor
+    <section class="my-4 position-relative"
+             style="background: url('<?= callMedia("HOME_REPORTS_BG") ?? PLACEHOLDER_IMG ?>') center;
+                     background-size: cover;"
+    >
+        <div class="position-absolute top-0 end-0 m-2">
+            <?= summon_image_button("HOME_REPORTS_BG") ?>
+        </div>
+
+        <div class="container">
+            <div class="fw-semibold small">
+                <?= summon_editable("Reports Tag", "HOME_REPORTS_TAG") ?>
+            </div>
+            <div class="fw-semibold h3">
+                <?= summon_editable("The Annual Reports", "HOME_REPORTS_TITLE") ?>
+            </div>
+
+            <a href="<?= route_to("dashboard.landing.ar") ?>" class="my-3 btn btn-primary w-100">
+                Manage Annual Reports
+            </a>
         </div>
     </section>
 

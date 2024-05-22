@@ -163,7 +163,7 @@
     </section>
 
     <section class="my-4 position-relative"
-             style="background: url('<?= callMedia("HOME_REPORTS_BG") ?>') center;
+             style="background: url('<?= callMedia("HOME_REPORTS_BG") ?? PLACEHOLDER_IMG ?>') center;
                      background-size: cover;"
     >
         <div class="position-absolute top-0 end-0 m-2">
@@ -177,9 +177,10 @@
             <div class="fw-semibold h3">
                 <?= summon_editable("The Annual Reports", "HOME_REPORTS_TITLE") ?>
             </div>
-            <div class="my-3 bg-secondary py-5 d-flex justify-content-center align-items-center">
-                Coming Soon: Annual Reports Editor
-            </div>
+
+            <a href="<?= route_to("dashboard.landing.ar") ?>" class="my-3 btn btn-primary w-100">
+                Manage Annual Reports
+            </a>
         </div>
     </section>
 

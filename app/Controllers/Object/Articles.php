@@ -28,11 +28,20 @@ class Articles extends BaseController
             $imgUrl = base_url("/uploads/" . $path->getName());
         }
 
+        // upload attachment if exists
+        $attachmentUrl = null;
+        if (array_key_exists("attachment", $_FILES) && $_FILES["attachment"]["name"]) {
+            $path = $this->request->getFile("attachment");
+            $path->move(UPLOAD_FOLDER_URL, null, true);
+            $attachmentUrl = base_url("/uploads/" . $path->getName());
+        }
+
         $articles->insert(
             [
                 "slug" => $finalSlug,
                 "type" => strtoupper($type),
                 "imgUrl" => $imgUrl,
+                "attachmentUrl" => $attachmentUrl,
                 "title_EN" => $this->request->getPost("title_EN"),
                 "title_ID" => $this->request->getPost("title_ID"),
                 "title_CN" => $this->request->getPost("title_CN"),
@@ -67,6 +76,9 @@ class Articles extends BaseController
             case "PRODUCTS":
                 sendCalmSuccessMessage("Product Published!");
                 return redirect()->to(route_to("dashboard.what-we-do.products"));
+            case "ANNUAL-REPORT":
+                sendCalmSuccessMessage("Annual Report Created!");
+                return redirect()->to(route_to("dashboard.landing.ar"));
         }
         return redirect()->back();
     }
@@ -108,6 +120,13 @@ class Articles extends BaseController
             $data['imgUrl'] = base_url("/uploads/" . $path->getName());
         }
 
+        // upload attachment if exists
+        if (array_key_exists("attachment", $_FILES) && $_FILES["attachment"]["name"]) {
+            $path = $this->request->getFile("attachment");
+            $path->move(UPLOAD_FOLDER_URL, null, true);
+            $data['attachmentUrl'] = base_url("/uploads/" . $path->getName());
+        }
+
         $articles->save($data);
 
         switch (strtoupper($instance->type)) {
@@ -120,6 +139,9 @@ class Articles extends BaseController
             case "PRODUCTS":
                 sendCalmSuccessMessage("Product Updated!");
                 return redirect()->to(route_to("dashboard.what-we-do.products"));
+            case "ANNUAL-REPORT":
+                sendCalmSuccessMessage("Annual Report Updated!");
+                return redirect()->to(route_to("dashboard.landing.ar"));
         }
         return redirect()->back();
     }
