@@ -64,10 +64,10 @@
         </div>
 
         <div class="container">
-            <div class="fw-semibold small">
+            <div class="fw-semibold small text-white">
                 <?= summon_editable("Reports Tag", "HOME_REPORTS_TAG") ?>
             </div>
-            <div class="fw-semibold h3">
+            <div class="fw-semibold h3 text-white">
                 <?= summon_editable("The Annual Reports", "HOME_REPORTS_TITLE") ?>
             </div>
 
