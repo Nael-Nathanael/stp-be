@@ -58,21 +58,51 @@
                     </div>
                     <div class="col">
                         <?= summon_editable("About Us", "MENU_ABOUT", true) ?>
+                        <div class="" style="height: 10px"></div>
+                        <small style="line-height: 1">
+                            <?= summon_editable("Board Management", "MENU_ABOUT_BM", true) ?>
+                            <div class="" style="height: 5px"></div>
+                            <?= summon_editable("Corporate Governance", "MENU_ABOUT_CG", true) ?>
+                            <div class="" style="height: 5px"></div>
+                            <?= summon_editable("Our Code", "MENU_ABOUT_OC", true) ?>
+                        </small>
                     </div>
                     <div class="col">
                         <?= summon_editable("What We Do", "MENU_WHATWEDO", true) ?>
+                        <div class="" style="height: 10px"></div>
+                        <small style="line-height: 1">
+                            <?= summon_editable("Our Products", "MENU_WHATWEDO_PROD", true) ?>
+                            <div class="" style="height: 5px"></div>
+                            <?= summon_editable("Our Locations", "MENU_WHATWEDO_LOC", true) ?>
+                        </small>
                     </div>
                     <div class="col">
                         <?= summon_editable("Partnership", "MENU_PARTNERSHIPS", true) ?>
                     </div>
                     <div class="col">
                         <?= summon_editable("Sustainability", "MENU_SUSTAINABILITY", true) ?>
+                        <div class="" style="height: 10px"></div>
+                        <small style="line-height: 1">
+                            <?= summon_editable("Environment Aspec", "MENU_SUSTAINABILITY__1", true) ?>
+                            <div class="" style="height: 5px"></div>
+                            <?= summon_editable("Social Aspec", "MENU_SUSTAINABILITY__2", true) ?>
+                            <div class="" style="height: 5px"></div>
+                            <?= summon_editable("Economic Aspec", "MENU_SUSTAINABILITY__3", true) ?>
+                        </small>
                     </div>
                     <div class="col">
                         <?= summon_editable("Career", "MENU_CAREER", true) ?>
                     </div>
                     <div class="col">
                         <?= summon_editable("Media", "MENU_MEDIA", true) ?>
+                        <div class="" style="height: 10px"></div>
+                        <small style="line-height: 1">
+                            <?= summon_editable("Gallery", "MENU_MEDIA__1", true) ?>
+                            <div class="" style="height: 5px"></div>
+                            <?= summon_editable("News", "MENU_MEDIA__2", true) ?>
+                            <div class="" style="height: 5px"></div>
+                            <?= summon_editable("Press", "MENU_MEDIA__3", true) ?>
+                        </small>
                     </div>
                     <div class="col">
                         <?= summon_editable("Contact Us", "MENU_CONTACTUS", true) ?>
