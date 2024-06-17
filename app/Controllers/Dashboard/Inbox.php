@@ -12,7 +12,7 @@ class Inbox extends BaseController
         bindFlashdata($data);
 
         $model = model("STPInbox");
-        $data['messages'] = $model
+        $data['inboxes'] = $model
             ->orderBy("createdAt", "DESC")
             ->findAll();
         return view("_pages/dashboard/inbox/index", $data);
