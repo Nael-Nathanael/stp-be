@@ -69,6 +69,8 @@ $routes->group('dashboard', function ($routes) {
 
     $routes->get('media', "Dashboard\Media::index", ["as" => "dashboard.media.index"]);
     $routes->get('media/gallery', "Dashboard\Media::gallery", ["as" => "dashboard.media.gallery"]);
+    $routes->get('media/gallery/add', "Dashboard\Media::gallery_add", ["as" => "dashboard.media.gallery.add"]);
+    $routes->get('media/gallery/(:segment)', "Dashboard\Media::gallery_detail/$1", ["as" => "dashboard.media.gallery.album"]);
 
     $routes->get('media/press', "Dashboard\Media::press", ["as" => "dashboard.media.press"]);
     $routes->get('media/press/create', "Dashboard\Media::press_create", ["as" => "dashboard.media.press.create"]);
@@ -110,6 +112,18 @@ $routes->group("object", function ($routes) {
         $routes->get('get/(:segment)', "Object\Articles::get/$1", ["as" => "object.articles.get"]);
         $routes->get('get/detail/(:segment)', "Object\Articles::detail/$1", ["as" => "object.articles.getSpecific"]);
     });
+
+    $routes->group('album', function ($routes) {
+        $routes->post('create', "Object\Album::create", ["as" => "object.album.create"]);
+        $routes->get('delete/(:segment)', "Object\Album::delete/$1", ["as" => "object.album.delete"]);
+        $routes->get('get', "Object\Album::get", ["as" => "object.album.get"]);
+
+        $routes->group('photo', function ($routes) {
+            $routes->post('add/(:segment)', "Object\Album::add_photo/$1", ["as" => "object.album.photo.add"]);
+            $routes->get('delete/(:segment)', "Object\Album::delete_photo/$1", ["as" => "object.album.photo.delete"]);
+        });
+    });
+
 
     $routes->group('history', function ($routes) {
         $routes->get('get', "Object\History::list", ["as" => "object.history.list"]);

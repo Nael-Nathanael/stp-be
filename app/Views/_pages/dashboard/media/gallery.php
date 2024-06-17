@@ -65,8 +65,38 @@
     </section>
 
     <section class="my-4 container">
-        <div class="my-3 bg-secondary py-5 d-flex justify-content-center align-items-center" style="min-height: 300px">
-            Coming Soon: Gallery Album Editor
+        <div class="text-end">
+            <a href="<?= route_to("dashboard.media.gallery.add") ?>" class="btn btn-outline-primary">
+                <i class="bi bi-plus"></i> Add Album
+            </a>
+        </div>
+        <div class="row g-4">
+            <?php foreach ($albums as $album): ?>
+                <div class="col-4">
+                    <?php if (count($album->photos) == 0): ?>
+                        <img src="https://via.placeholder.com/1600x900.png" alt="placeholder" class="w-100">
+                    <?php else: ?>
+                        <img src="<?= reset($album->photos)->url ?>" class="w-100"
+                             alt="<?= reset($album->photos)->description_EN ?>">
+                    <?php endif; ?>
+
+                    <div class="my-2">
+                        <div class="<?= currLang() == "ID" ? 'fs-3' : 'small' ?>">[ID] <?= $album->title_ID ?></div>
+                        <div class="<?= currLang() == "EN" ? 'fs-3' : 'small' ?>">[EN] <?= $album->title_EN ?></div>
+                        <div class="<?= currLang() == "CN" ? 'fs-3' : 'small' ?>">[CN] <?= $album->title_CN ?></div>
+                    </div>
+
+                    <div class="mt-4 mb-2">
+                        <div class="<?= currLang() == "ID" ? '' : 'small' ?>">[ID] <?= $album->description_ID ?></div>
+                        <div class="<?= currLang() == "ID" ? '' : 'small' ?>">[EN] <?= $album->description_EN ?></div>
+                        <div class="<?= currLang() == "ID" ? '' : 'small' ?>">[CN] <?= $album->description_CN ?></div>
+                    </div>
+                    <a href="<?= route_to("dashboard.media.gallery.album", $album->slug) ?>"
+                       class="btn btn-outline-primary btn-sm w-100">
+                        <i class="bi bi-pen"></i> Manage Photo
+                    </a>
+                </div>
+            <?php endforeach; ?>
         </div>
     </section>
 </div>

@@ -17,7 +17,43 @@ class Media extends BaseController
     {
         $data = [];
         bindFlashdata($data);
+        $model = model("STPAlbum");
+        $albums = $model->orderBy("date ASC")->findAll();
+
+        $photoModel = model("STPPhoto");
+
+        foreach ($albums as $album) {
+            $album->photos = $photoModel
+                ->where("album_slug", $album->slug)
+                ->findAll();
+        }
+
+        $data['albums'] = $albums;
         return view("_pages/dashboard/media/gallery", $data);
+    }
+
+    public function gallery_detail($album_slug): string
+    {
+        $data = [];
+        bindFlashdata($data);
+        $model = model("STPAlbum");
+        $album = $model->where("slug", $album_slug)->first();
+
+        $photoModel = model("STPPhoto");
+
+        $album->photos = $photoModel
+            ->where("album_slug", $album->slug)
+            ->findAll();
+
+        $data['album'] = $album;
+        return view("_pages/dashboard/media/gallery_detail", $data);
+    }
+
+    public function gallery_add(): string
+    {
+        $data = [];
+        bindFlashdata($data);
+        return view("_pages/dashboard/media/gallery_add", $data);
     }
 
     public function news(): string
