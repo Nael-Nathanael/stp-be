@@ -140,6 +140,12 @@ $routes->group("object", function ($routes) {
         $routes->post('update/(:segment)', "Object\Careers::update/$1", ["as" => "object.career.update"]);
         $routes->get('get', "Object\Careers::get", ["as" => "object.career.get"]);
     });
+
+    $routes->group('inbox', function ($routes) {
+        $routes->post('create', "Object\Inbox::create", ["as" => "object.inbox.create"]);
+        $routes->get('delete/(:segment)', "Object\Inbox::delete/$1", ["as" => "object.inbox.delete"]);
+        $routes->get('get', "Object\Inbox::get", ["as" => "object.inbox.get"]);
+    });
 });
 
 

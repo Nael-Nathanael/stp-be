@@ -34,7 +34,7 @@ class Inbox extends BaseController
         return $this->response->setJSON($data);
     }
 
-    public function list(): ResponseInterface
+    public function get(): ResponseInterface
     {
         $model = model("STPInbox");
         return $this->response->setJSON(
