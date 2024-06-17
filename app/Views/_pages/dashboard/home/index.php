@@ -126,7 +126,7 @@
     </section>
 
     <section class="my-4 container">
-        <div class="row">
+        <div class="row gy-3">
             <div class="col-8">
                 <div class="fw-semibold small">
                     <?= summon_editable("Stock Price Live Tag", "HOME_SPL_TAG") ?>
@@ -142,8 +142,21 @@
                 </div>
             </div>
             <div class="col-12">
-                <div class="d-flex py-5 bg-secondary justify-content-center align-items-center">
-                    Coming Soon: Stock Price Live Editor
+                <div class="row g-4">
+                    <?php for ($i = 1; $i <= 12; $i++): ?>
+                        <div class="col-2">
+                            <div class="text-center mb-1 fw-bold">
+                                Graph Item <?= $i ?>
+                            </div>
+                            <div class="small">
+                                <?= summon_editable("Month", "SPL_${i}_MONTH", true) ?>
+                                <div class="my-1">
+                                    <?= summon_editable("Year", "SPL_${i}_YEAR", true) ?>
+                                </div>
+                                <?= summon_editable("Value", "SPL_${i}_VAL", true) ?>
+                            </div>
+                        </div>
+                    <?php endfor; ?>
                 </div>
             </div>
         </div>
