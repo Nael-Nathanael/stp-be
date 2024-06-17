@@ -214,10 +214,6 @@
             <?= summon_image_field("HOME_CONTACT_US_IMAGE") ?>
         </div>
     </section>
-
-    <section class="mt-5 py-5 bg-dark d-flex justify-content-center align-items-center text-white">
-        Footer
-    </section>
 </div>
 
 

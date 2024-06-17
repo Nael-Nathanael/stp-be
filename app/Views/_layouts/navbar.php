@@ -179,6 +179,12 @@
                 </li>
 
                 <li class="nav-item">
+                    <a class="nav-link" href="<?= route_to("dashboard.inbox.index") ?>">
+                        Inbox
+                    </a>
+                </li>
+
+                <li class="nav-item">
                     <a class="nav-link btn btn-sm btn-outline-danger"
                        href="<?= route_to("auth.logout") ?>"
                     >
