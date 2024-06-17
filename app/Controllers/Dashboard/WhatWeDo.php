@@ -46,6 +46,11 @@ class WhatWeDo extends BaseController
     {
         $data = [];
         bindFlashdata($data);
+        $photoModel = model("STPPhoto");
+
+        $data['photos'] = $photoModel
+            ->where("album_slug", "--LOC")
+            ->findAll();
         return view("_pages/dashboard/what-we-do/locations", $data);
     }
 }

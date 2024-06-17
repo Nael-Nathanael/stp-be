@@ -85,4 +85,13 @@ class Album extends BaseController
 
         return $this->response->setJSON($albums);
     }
+
+    public function getLoc(): ResponseInterface
+    {
+        $photoModel = model("STPPhoto");
+
+        return $this->response->setJSON($photoModel
+            ->where("album_slug", "--LOC")
+            ->findAll());
+    }
 }

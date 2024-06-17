@@ -117,6 +117,7 @@ $routes->group("object", function ($routes) {
         $routes->post('create', "Object\Album::create", ["as" => "object.album.create"]);
         $routes->get('delete/(:segment)', "Object\Album::delete/$1", ["as" => "object.album.delete"]);
         $routes->get('get', "Object\Album::get", ["as" => "object.album.get"]);
+        $routes->get('getLoc', "Object\Album::getLoc", ["as" => "object.album.getLoc"]);
 
         $routes->group('photo', function ($routes) {
             $routes->post('add/(:segment)', "Object\Album::add_photo/$1", ["as" => "object.album.photo.add"]);
