@@ -27,11 +27,11 @@ class Inbox extends BaseController
         /**
          * @type string[] $post
          */
-        $data = $this->request->getJSON();
+        $data = $_POST;
 
         $model->insert($data);
 
-        return $this->response->setJSON($data);
+        return redirect()->to("https://www.stpcoal.co.id/contact-us/submitted");
     }
 
     public function get(): ResponseInterface
