@@ -64,6 +64,58 @@
         </div>
     </section>
 
+    <section class="my-4 container">
+        <div class="row">
+            <div class="col-6">
+                <?= summon_image_field("OC_HEADER_LEFT_IMG_2") ?>
+                <div class="w-50">
+                    <?= summon_image_field("OC_HEADER_LEFT_IMG_OPT_2") ?>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="small fw-semibold">
+                    <?= summon_editable("Our Code Header Tag 2", "OC_HEADER_TAG_2") ?>
+                </div>
+
+                <div class="bg-warning pt-1" style="max-width: 100px"></div>
+
+                <div class="h3 fw-semibold">
+                    <?= summon_editable_ckeditor("Our Code Header Title 2", "OC_HEADER_TITLE_2") ?>
+                </div>
+
+                <div class="fw-semibold">
+                    <?= summon_editable_ckeditor("Our Code Header Content 2", "OC_HEADER_CONTENT_2") ?>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="my-4 container">
+        <div class="row">
+            <div class="col-6">
+                <?= summon_image_field("OC_HEADER_LEFT_IMG_3") ?>
+                <div class="w-50">
+                    <?= summon_image_field("OC_HEADER_LEFT_IMG_OPT_3") ?>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="small fw-semibold">
+                    <?= summon_editable("Our Code Header Tag 3", "OC_HEADER_TAG_3") ?>
+                </div>
+
+                <div class="bg-warning pt-1" style="max-width: 100px"></div>
+
+                <div class="h3 fw-semibold">
+                    <?= summon_editable_ckeditor("Our Code Header Title 3", "OC_HEADER_TITLE_3") ?>
+                </div>
+
+                <div class="fw-semibold">
+                    <?= summon_editable_ckeditor("Our Code Header Content 3", "OC_HEADER_CONTENT_3") ?>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="container my-4">
         <?= view(
             "_components/UseDoc",
