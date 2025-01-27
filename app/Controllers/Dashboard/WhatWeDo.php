@@ -53,4 +53,11 @@ class WhatWeDo extends BaseController
             ->findAll();
         return view("_pages/dashboard/what-we-do/locations", $data);
     }
+
+    public function exploration()
+    {
+        $data = [];
+        bindFlashdata($data);
+        return view("_pages/dashboard/what-we-do/exploration", $data);
+    }
 }

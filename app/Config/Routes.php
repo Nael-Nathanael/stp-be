@@ -53,8 +53,8 @@ $routes->group('dashboard', function ($routes) {
 
     $routes->get('what-we-do', "Dashboard\WhatWeDo::index", ["as" => "dashboard.what-we-do.index"]);
     $routes->get('what-we-do/locations', "Dashboard\WhatWeDo::locations", ["as" => "dashboard.what-we-do.locations"]);
-
     $routes->get('what-we-do/products', "Dashboard\WhatWeDo::products", ["as" => "dashboard.what-we-do.products"]);
+    $routes->get('what-we-do/exploration', "Dashboard\WhatWeDo::exploration", ["as" => "dashboard.what-we-do.exploration"]);
     $routes->get('what-we-do/products/create', "Dashboard\WhatWeDo::products_create", ["as" => "dashboard.what-we-do.products.create"]);
     $routes->get('what-we-do/products/update/(:segment)', "Dashboard\WhatWeDo::products_update/$1", ["as" => "dashboard.what-we-do.products.update"]);
 
