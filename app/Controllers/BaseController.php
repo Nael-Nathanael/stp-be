@@ -51,7 +51,7 @@ class BaseController extends Controller
         $media = model("STPMedia");
 
         define("UPLOAD_FOLDER_URL", ROOTPATH . 'public' . DIRECTORY_SEPARATOR . 'uploads');
-        define("PLACEHOLDER_IMG", "https://via.placeholder.com/1280x720.png");
+        define("PLACEHOLDER_IMG", "https://placehold.co/1280x720.png");
 
         header("Access-Control-Allow-Origin: *");
         header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Requested-Method, Authorization");

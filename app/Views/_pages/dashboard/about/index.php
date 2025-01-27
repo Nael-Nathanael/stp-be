@@ -256,7 +256,7 @@
                     <small>Milestone (Phone)</small>
                     <div style="
                             aspect-ratio: 9 / 16;
-                            background: url('<?= $GLOBALS['stp_media']->getOrNoneByKey("ABOUT_MILESTONE_IMAGE_SM") ?? "https://via.placeholder.com/720x1280" ?>') center;
+                            background: url('<?= $GLOBALS['stp_media']->getOrNoneByKey("ABOUT_MILESTONE_IMAGE_SM") ?? "https://placehold.co/720x1280" ?>') center;
                             background-size: cover;
                             " class="position-relative w-100 h-100">
                         <div class="p-2 position-absolute top-0 end-0">

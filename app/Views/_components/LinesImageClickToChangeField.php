@@ -13,7 +13,7 @@ $medias = model("STPMedia");
 ?>
 
 <div class="position-relative">
-    <img src="<?= $medias->getOrNoneByKey($field_id) ?? "https://via.placeholder.com/$res[0]x$res[1].png" ?>"
+    <img src="<?= $medias->getOrNoneByKey($field_id) ?? "https://placehold.co/$res[0]x$res[1].png" ?>"
          class="w-100 rounded" alt=""
          style="aspect-ratio: <?= $ratio[0] ?> / <?= $ratio[1] ?>; object-fit: <?= $fit ?>;">
     <div class="position-absolute top-0 end-0 m-2">

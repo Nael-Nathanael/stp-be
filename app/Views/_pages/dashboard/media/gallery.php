@@ -74,7 +74,7 @@
             <?php foreach ($albums as $album): ?>
                 <div class="col-4">
                     <?php if (count($album->photos) == 0): ?>
-                        <img src="https://via.placeholder.com/1600x900.png" alt="placeholder" class="w-100">
+                        <img src="https://placehold.co/1600x900.png" alt="placeholder" class="w-100">
                     <?php else: ?>
                         <img src="<?= reset($album->photos)->url ?>" class="w-100"
                              alt="<?= reset($album->photos)->description_EN ?>">
