@@ -74,6 +74,8 @@
                             <?= summon_editable("Our Products", "MENU_WHATWEDO_PROD", true) ?>
                             <div class="" style="height: 5px"></div>
                             <?= summon_editable("Our Locations", "MENU_WHATWEDO_LOC", true) ?>
+                            <div class="" style="height: 5px"></div>
+                            <?= summon_editable("Our Expertise", "MENU_WHATWEDO_EXP", true) ?>
                         </small>
                     </div>
                     <div class="col">
