@@ -77,6 +77,11 @@
                                 Edit "Locations" Page
                             </a>
                         </li>
+                        <li>
+                            <a class="dropdown-item" href="<?= route_to("dashboard.what-we-do.exploration") ?>">
+                                Edit "Exploration" Page
+                            </a>
+                        </li>
                     </ul>
                 </li>
 
